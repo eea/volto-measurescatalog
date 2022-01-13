@@ -19,11 +19,17 @@ export function installMeasuresCatalogue(config) {
   registry.searchui.wise.resultViews[0].icon = 'list';
   registry.searchui.wise.resultViews[1].icon = 'table';
 
+  // making it suitable for es middleware
+  registry.searchui.wise.elastic_index = `_es/wise`;
+
   envConfig.app_name = pjson.name;
   envConfig.app_version = pjson.version;
 
-  if (typeof window !== 'undefined' && process.env.USE_ES_PROXY === 'true') {
-    config.searchui.wise.host =
+  if (
+    typeof window !== 'undefined'
+    // && process.env.RAZZLE_USE_ES_PROXY === 'true'
+  ) {
+    registry.searchui.wise.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
 

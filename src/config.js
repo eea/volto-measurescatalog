@@ -160,8 +160,8 @@ const details = {
 };
 
 export const wise_config = {
-  host: 'http://localhost:7000',
-  elastic_index: 'es',
+  // host: 'http://localhost:7000',
+  elastic_index: 'wise_catalogue_measures',
   layoutComponent: 'WiseLayout',
   searchBoxInputComponent: 'SimpleSearchInput',
   // searchBoxComponent: 'searchui.SearchBox',
