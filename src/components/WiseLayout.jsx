@@ -1,10 +1,12 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
+// import '../less/custom.less';
+import '../less/public.less';
 
 const RightColumnLayout = (props) => {
   const { bodyContent, bodyFooter, bodyHeader, header, sideContent } = props;
   return (
-    <div>
+    <div id="search-app">
       <Grid columns={2} stackable className="body-content">
         <Grid.Row>
           <Grid.Column widescreen={12}>

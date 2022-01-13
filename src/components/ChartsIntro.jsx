@@ -196,7 +196,7 @@ const ChartsIntro = (props) => {
     parseInt(a.Descriptor.slice(1)) > parseInt(b.Descriptor.slice(1)) ? 1 : -1,
   );
   const measureData = chartData ? getMeasureImpacts(chartData) : [];
-  // console.log('measureData', measureData);
+  console.log('measureData', measureData, chartData);
   // console.log('all', chartData);
   // console.log('barData', barData);
 
