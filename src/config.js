@@ -177,6 +177,7 @@ export const wise_config = {
   // searchBoxComponent: 'searchui.SearchBox',
   useSearchPhrases: false,
   searchAsYouType: false,
+
   facets: [
     multiTermFacet({
       field: 'Origin of the measure',
@@ -361,10 +362,16 @@ export const wise_config = {
     // }),
   ],
   highlight: {
-    fields: {
-      // Measure_name: {},
+    queryParams: {
+      fragment_size: 200,
+      number_of_fragments: 3,
+    },
+    fields: ['description'],
+    queryBuilder: {
+      factory: 'highlightQueryBuilder',
     },
   },
+
   sortOptions: [
     {
       name: 'Title',
