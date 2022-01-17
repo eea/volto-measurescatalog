@@ -32,7 +32,11 @@ const Inner = (props) => {
   const { appConfig } = useAppConfig();
   const { listingViewParams, facets = [] } = appConfig;
 
-  return <p>WIP item</p>;
+  console.log(result);
+  return (
+    <p>{result.testtest}</p>
+  );
+
   // return (
   //   <Item>
   //     <Item.Content>

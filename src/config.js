@@ -10,6 +10,7 @@ import {
   makeRange,
   multiTermFacet,
 } from '@eeacms/search';
+import { ResultModelExtended } from './models';
 
 const details = {
   titleField: 'Measure name',
@@ -428,6 +429,10 @@ export const wise_config = {
     details,
   },
   download_fields: [],
+
+  resultItemModel: {
+    factory: 'ResultModelExtended',
+  },
 };
 
 export const wise_resolve = {
@@ -440,4 +445,5 @@ export const wise_resolve = {
   ListingViewItem: {
     component: ListingViewItem,
   },
+  ResultModelExtended,
 };
