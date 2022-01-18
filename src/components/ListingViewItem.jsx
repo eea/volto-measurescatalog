@@ -31,8 +31,10 @@ const Inner = (props) => {
   const { result } = props;
   const { appConfig } = useAppConfig();
   const { listingViewParams, facets = [] } = appConfig;
+  const getVal = (field) => {
+    return result.getVal(field);
+  };
 
-  console.log(result);
   return (
     <Item>
       <Item.Content>
@@ -42,13 +44,10 @@ const Inner = (props) => {
             field === 'Descriptors' ? (
               <div className="simple-item-extra descriptor-item" key={i}>
                 <span className="simple-item-label">{label}:</span>{' '}
-                {typeof result[field]?.raw === 'string' ? (
-                  <DescriptorItem
-                    facets={facets}
-                    descriptor={result[field]?.raw}
-                  />
-                ) : Array.isArray(result[field]?.raw) ? (
-                  result[field]?.raw.map((item, i) => (
+                {typeof getVal(field) === 'string' ? (
+                  <DescriptorItem facets={facets} descriptor={getVal(field)} />
+                ) : Array.isArray(getVal(field)) ? (
+                  getVal(field).map((item, i) => (
                     <span key={i} className="array-string-item">
                       {i > 0 && ', '}
                       <DescriptorItem
@@ -59,16 +58,13 @@ const Inner = (props) => {
                     </span>
                   ))
                 ) : (
-                  <DescriptorItem
-                    facets={facets}
-                    descriptor={result[field]?.raw}
-                  />
+                  <DescriptorItem facets={facets} descriptor={getVal(field)} />
                 )}
               </div>
             ) : (
               <div className="simple-item-extra" key={i}>
                 <span className="simple-item-label">{label}:</span>{' '}
-                <String val={result[field]?.raw} />
+                <String val={getVal(field)} />
               </div>
             ),
           )}

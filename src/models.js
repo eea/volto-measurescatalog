@@ -1,15 +1,25 @@
 import { ResultModel } from '@eeacms/search/lib/models';
 
 export class ResultModelExtended extends ResultModel {
-  // get id() {
-  //   return this.id?.raw;
-  // }
-  //
-  // get isNew() {
-  //   return this.daysSinceIssued < 30;
-  // }
-
-  get testtest() {
-    return 'TestTest';
+  get originOfMeasure() {
+    return this._result['Origin of the measure']?.raw;
   }
+
+  get descriptors() {
+    return this._result['Descriptors']?.raw;
+  }
+
+  get sector() {
+    return this._result['Sector']?.raw;
+  }
+
+  getVal = (field) => {
+    const fields = {
+      'Origin of the measure': this.originOfMeasure,
+      Descriptors: this.descriptors,
+      Sector: this.sector,
+    };
+
+    return fields[field];
+  };
 }
