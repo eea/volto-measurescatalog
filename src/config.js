@@ -1,15 +1,7 @@
-import { suiFacet, mergeConfig } from '@eeacms/search'; // multiTermFacet,
+import { suiFacet, mergeConfig, multiTermFacet } from '@eeacms/search';
 import WiseLayout from './components/WiseLayout';
 import ChartsIntro from './components/ChartsIntro';
 import ListingViewItem from './components/ListingViewItem';
-import {
-  booleanFacet,
-  dateRangeFacet,
-  fixedRangeFacet,
-  histogramFacet,
-  makeRange,
-  multiTermFacet,
-} from '@eeacms/search';
 import { ResultModelExtended } from './models';
 
 const details = {
@@ -172,126 +164,42 @@ export const wise_config = {
   // host: 'http://localhost:7000',
   title: 'Catalogue of Measures',
   elastic_index: 'wise_catalogue_measures',
+  enableNLP: false,
   layoutComponent: 'WiseLayout',
   facetsListComponent: 'VerticalCardsModalFacets',
+  // facetsListComponent: 'FacetsList',
+  // facetsListComponent: 'DefaultFacetsList',
   searchBoxInputComponent: 'SimpleSearchInput',
   // searchBoxComponent: 'searchui.SearchBox',
   useSearchPhrases: false,
   searchAsYouType: false,
 
   facets: [
-    multiTermFacet({
-      field: 'Origin of the measure',
-      label: 'Origin of the measure',
-      isFilterable: false,
-      isMulti: true,
-      wrapper: 'ModalFacetWrapper',
-      factory: 'MultiTermListFacet',
-      show: 100,
-    }),
-    multiTermFacet({
-      field: 'Sector',
-      label: 'Sector',
-      isFilterable: false,
-      isMulti: true,
-      wrapper: 'ModalFacetWrapper',
-      factory: 'MultiTermListFacet',
-      show: 100,
-    }),
-    multiTermFacet({
-      field: 'Descriptors',
-      label: 'Descriptors',
-      isFilterable: false,
-      isMulti: true,
-      wrapper: 'ModalFacetWrapper',
-      factory: 'MultiTermListFacet',
-      facetValues: [
-        {
-          value: 'D1',
-          name: 'D1. Biodiversity',
-          url:
-            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-1/index_en.htm',
-        },
-        {
-          value: 'D2',
-          name: 'D2. Non-indigenous Species',
-          url:
-            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-2/index_en.htm',
-        },
-        {
-          value: 'D3',
-          name: 'D3.  Commercial Fish and shellfish',
-          url:
-            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-3/index_en.htm',
-        },
-        {
-          value: 'D4',
-          name: 'D4. Food Webs',
-          url:
-            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-4/index_en.htm',
-        },
-        {
-          value: 'D5',
-          name: 'D5. Eutrophication',
-          url:
-            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-5/index_en.htm',
-        },
-        {
-          value: 'D6',
-          name: 'D6. Sea-floor Integrity',
-          url:
-            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-6/index_en.htm',
-        },
-        {
-          value: 'D7',
-          name: 'D7. Hydrographical Conditions',
-          url:
-            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-7/index_en.htm',
-        },
-        {
-          value: 'D8',
-          name: 'D8. Contaminants',
-          url:
-            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-8/index_en.htm',
-        },
-        {
-          value: 'D9',
-          name: 'D9. Contaminants in Seafood',
-          url:
-            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-9/index_en.htm',
-        },
-        {
-          value: 'D10',
-          name: 'D10. Marine Litter',
-          url:
-            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-10/index_en.htm',
-        },
-        {
-          value: 'D11',
-          name: 'D11. Energy including Underwater Noise',
-          url:
-            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-11/index_en.htm',
-        },
-      ],
-      show: 100,
-    }),
-
-    // suiFacet({
+    // multiTermFacet({
     //   field: 'Origin of the measure',
     //   label: 'Origin of the measure',
     //   isFilterable: false,
-    //   show: 100,
-    // }),
-    // suiFacet({
-    //   field: 'Sector',
     //   isMulti: true,
-    //   isFilterable: false,
+    //   wrapper: 'ModalFacetWrapper',
+    //   factory: 'MultiTermListFacet',
     //   show: 100,
     // }),
-    // suiFacet({
-    //   field: 'Descriptors',
+    // multiTermFacet({
+    //   field: 'Sector',
+    //   label: 'Sector',
     //   isFilterable: false,
+    //   isMulti: true,
+    //   wrapper: 'ModalFacetWrapper',
+    //   factory: 'MultiTermListFacet',
     //   show: 100,
+    // }),
+    // multiTermFacet({
+    //   field: 'Descriptors',
+    //   label: 'Descriptors',
+    //   isFilterable: false,
+    //   isMulti: true,
+    //   wrapper: 'ModalFacetWrapper',
+    //   factory: 'MultiTermListFacet',
     //   facetValues: [
     //     {
     //       value: 'D1',
@@ -360,7 +268,115 @@ export const wise_config = {
     //         'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-11/index_en.htm',
     //     },
     //   ],
+    //   show: 100,
     // }),
+
+    //multiTermFacet({
+    suiFacet({
+      field: 'Origin of the measure',
+      label: 'Origin of the measure',
+      isFilterable: false,
+      show: 100,
+      // factory: 'MultiTermListFacet',
+      // factory: 'sui.Facet',
+      factory: 'MultiTermFacet',
+      // wrapper: 'ModalFacetWrapper',
+      // wrapper: 'GenericWrapper',
+      wrapper: 'AccordionFacetWrapper',
+    }),
+    //multiTermFacet({
+    suiFacet({
+      field: 'Sector',
+      isMulti: true,
+      isFilterable: false,
+      show: 100,
+      // factory: 'MultiTermListFacet',
+      // factory: 'sui.Facet',
+      factory: 'MultiTermFacet',
+      // wrapper: 'ModalFacetWrapper',
+      // wrapper: 'GenericWrapper',
+      wrapper: 'AccordionFacetWrapper',
+    }),
+    //multiTermFacet({
+    suiFacet({
+      field: 'Descriptors',
+      isFilterable: false,
+      show: 100,
+      // factory: 'MultiTermListFacet',
+      // factory: 'sui.Facet',
+      factory: 'MultiTermFacet',
+      // wrapper: 'ModalFacetWrapper',
+      // wrapper: 'GenericWrapper',
+      wrapper: 'AccordionFacetWrapper',
+      facetValues: [
+        {
+          value: 'D1',
+          name: 'D1. Biodiversity',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-1/index_en.htm',
+        },
+        {
+          value: 'D2',
+          name: 'D2. Non-indigenous Species',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-2/index_en.htm',
+        },
+        {
+          value: 'D3',
+          name: 'D3.  Commercial Fish and shellfish',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-3/index_en.htm',
+        },
+        {
+          value: 'D4',
+          name: 'D4. Food Webs',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-4/index_en.htm',
+        },
+        {
+          value: 'D5',
+          name: 'D5. Eutrophication',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-5/index_en.htm',
+        },
+        {
+          value: 'D6',
+          name: 'D6. Sea-floor Integrity',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-6/index_en.htm',
+        },
+        {
+          value: 'D7',
+          name: 'D7. Hydrographical Conditions',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-7/index_en.htm',
+        },
+        {
+          value: 'D8',
+          name: 'D8. Contaminants',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-8/index_en.htm',
+        },
+        {
+          value: 'D9',
+          name: 'D9. Contaminants in Seafood',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-9/index_en.htm',
+        },
+        {
+          value: 'D10',
+          name: 'D10. Marine Litter',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-10/index_en.htm',
+        },
+        {
+          value: 'D11',
+          name: 'D11. Energy including Underwater Noise',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-11/index_en.htm',
+        },
+      ],
+    }),
   ],
   highlight: {
     queryParams: {
