@@ -275,6 +275,7 @@ export const wise_config = {
     suiFacet({
       field: 'Origin of the measure',
       label: 'Origin of the measure',
+      isMulti: true,
       isFilterable: false,
       show: 100,
       // factory: 'MultiTermListFacet',
@@ -300,6 +301,7 @@ export const wise_config = {
     //multiTermFacet({
     suiFacet({
       field: 'Descriptors',
+      isMulti: true,
       isFilterable: false,
       show: 100,
       // factory: 'MultiTermListFacet',
