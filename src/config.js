@@ -172,6 +172,8 @@ export const wise_config = {
   useSearchPhrases: false,
   searchAsYouType: false,
 
+  permanentFilters: [],
+
   facets: [
     suiFacet({
       field: 'Origin of the measure',
