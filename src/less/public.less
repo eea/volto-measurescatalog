@@ -3,9 +3,49 @@ body.searchlib-page {
     top: 0px;
 
     div.searchapp {
-      div.col-left {
-        padding: 0px 1.5em 0px 1.5em;
-        margin-top: 0px;
+      div.header-content {
+        div.container.header-columns {
+          width: 100% !important;
+
+          div.col-left {
+            div.search-logo {
+              text-align: right;
+
+              img {
+                width: 100px !important;
+                height: auto;
+              }
+            }
+          }
+
+          div.col-mid {
+            div.sui-search-box {
+              display: flex;
+              max-width: 630px;
+            }
+          }
+        }
+      }
+
+      div.body-content {
+        div.col-left {
+          padding: 0px 1.5em 0px 1.5em;
+          margin-top: 0px;
+
+          div.above-results {
+            display: flex;
+
+            div.sorting {
+              span {
+                display: flex;
+              }
+            }
+          }
+        }
+
+        div.col-left {
+          padding: 0px 1.5em 0px 1.5em;
+        }
       }
     }
   }
