@@ -18,17 +18,17 @@ const RightColumnLayout = (props) => {
       <Grid columns={2} stackable className="body-content">
         <Grid.Row>
           <Grid.Column
-            widescreen="10"
-            tablet="10"
-            computer="10"
+            widescreen="9"
+            tablet="9"
+            computer="9"
             className="col-left"
           >
             <div>{bodyContent}</div>
           </Grid.Column>
           <Grid.Column
-            widescreen="2"
-            tablet="2"
-            computer="2"
+            widescreen="3"
+            tablet="3"
+            computer="3"
             className="col-right"
           >
             <h3>Filter by</h3>
