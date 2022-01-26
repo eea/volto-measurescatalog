@@ -2,7 +2,36 @@ body.searchlib-page {
   div#page-document {
     top: 0px;
 
-    div.searchapp {
+    div.searchapp.searchapp-wise {
+      background-color: #fff !important;
+      font-family: 'RobotoL' !important;
+
+      div#search-app {
+        .row {
+          margin-right: -1rem !important;
+          margin-left: -1rem !important;
+        }
+      }
+
+      &.simple-page {
+
+      }
+
+      &.landing-page {
+        div.nine.col-left {
+          width: 100% !important;
+        }
+
+        div.three.col-right {
+          display: none !important;
+        }
+
+        .charts-intro-page .ui.grid > * {
+          margin-right: auto !important;
+          margin-left: auto !important;
+        }
+      }
+
       div.header-content {
         div.container.header-columns {
           width: 100% !important;
@@ -56,21 +85,6 @@ body.searchlib-page {
 }
 
 // ----------------------------------------------------------------------------
-
-.searchapp-wise {
-  background-color: #fff !important;
-  font-family: 'RobotoL' !important;
-}
-
-#search-app .row {
-  margin-right: -1rem !important;
-  margin-left: -1rem !important;
-}
-
-#search-app .charts-intro-page .ui.grid > * {
-  margin-right: auto !important;
-  margin-left: auto !important;
-}
 
 .sorting {
   font-size: small !important;
