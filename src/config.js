@@ -169,8 +169,11 @@ export const wise_config = {
   // facetsListComponent: 'VerticalCardsModalFacets',
   facetsListComponent: 'DefaultFacetsList',
   searchBoxInputComponent: 'SimpleSearchInput',
+  // searchBoxInputComponent: 'DefaultSearchInput',
+  // searchBoxInputComponent: 'searchui.SearchBox',
   useSearchPhrases: false,
   searchAsYouType: false,
+  searchInputPlaceholder: 'Type in keywords',
 
   permanentFilters: [],
 
