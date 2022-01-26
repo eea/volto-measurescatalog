@@ -37,6 +37,8 @@ body.searchlib-page {
           width: 100% !important;
 
           div.col-left {
+            display: none;
+
             div.search-logo {
               text-align: right;
 
@@ -48,6 +50,8 @@ body.searchlib-page {
           }
 
           div.col-mid {
+            padding-left: 1.5em;
+
             div.sui-search-box {
               display: flex;
               max-width: 630px;
@@ -65,8 +69,14 @@ body.searchlib-page {
             display: flex;
 
             div.sorting {
+              font-size: small !important;
+
               span {
                 display: flex;
+              }
+
+              .item {
+                margin: 0 !important;
               }
             }
           }
@@ -85,15 +95,8 @@ body.searchlib-page {
 }
 
 // ----------------------------------------------------------------------------
-
-.sorting {
-  font-size: small !important;
-}
-
-.sorting .item {
-  margin: 0 !important;
-}
-
+// TODO colors palette, fonts, layout spacing - paddings, clean code
+//
 .ui.container.view-selector .buttons .button {
   border: 1px solid #e8e8e8;
   background-color: transparent !important;
@@ -177,6 +180,7 @@ body.searchlib-page {
 }
 
 .searchapp-wise .sui-search-box__submit {
+  padding: 10px;
   border: none;
   background: #002d54;
   border-radius: 4px;
