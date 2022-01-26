@@ -173,7 +173,7 @@ export const wise_config = {
   // searchBoxInputComponent: 'searchui.SearchBox',
   useSearchPhrases: false,
   searchAsYouType: false,
-  searchInputPlaceholder: 'Type in keywords',
+  searchInputPlaceholder: 'What are you looking for?',
 
   permanentFilters: [],
 
