@@ -1,3 +1,6 @@
+@wm-light-gray: #e8e8e8;
+@wm-medium-gray: #666;
+
 body.searchlib-page {
   div#page-document {
     top: 0px;
@@ -68,6 +71,25 @@ body.searchlib-page {
           div.above-results {
             display: flex;
 
+            .ui.container.view-selector {
+              .buttons {
+                .button {
+                  border: 1px solid @wm-light-gray;
+                  background-color: transparent !important;
+                  color: @wm-medium-gray !important;
+
+                  i.icon {
+                    margin: 0 !important;
+                  }
+                }
+
+                .button:hover,
+                .active.button {
+                  background-color: @wm-light-gray !important;
+                }
+              }
+            }
+
             div.sorting {
               font-size: small !important;
 
@@ -77,6 +99,10 @@ body.searchlib-page {
 
               .item {
                 margin: 0 !important;
+              }
+
+              .ui.selection.dropdown {
+                min-width: 8em;
               }
             }
           }
@@ -97,24 +123,6 @@ body.searchlib-page {
 // ----------------------------------------------------------------------------
 // TODO colors palette, fonts, layout spacing - paddings, clean code
 //
-.ui.container.view-selector .buttons .button {
-  border: 1px solid #e8e8e8;
-  background-color: transparent !important;
-  color: #666 !important;
-}
-
-.ui.container.view-selector .buttons .button i.icon {
-  margin: 0 !important;
-}
-
-.ui.container.view-selector .buttons .button:hover,
-.ui.container.view-selector .buttons .active.button {
-  background-color: #e8e8e8 !important;
-}
-
-.above-results .ui.selection.dropdown {
-  min-width: 8em;
-}
 
 .searchapp-wise .sui-layout-main-body,
 .searchapp-wise .ui.items > .item,
