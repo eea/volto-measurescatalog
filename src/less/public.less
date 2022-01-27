@@ -5,7 +5,6 @@
 @wm-light-gray5: #f9f9f9;
 @wm-light-gray6: #ddd;
 @wm-medium-gray: #666;
-@wm-medium-gray2: #002d54;
 @wm-medium-gray3: #4d4d4d;
 @wm-dark-gray: rgba(0, 0, 0, 0.87);
 @wm-light-blue: #6bc6fa;
@@ -13,6 +12,7 @@
 @wm-light-blue3: #0077bc;
 @wm-dark-blue: #005588;
 @wm-dark-blue2: #064c7f;
+@wm-dark-blue3: #002d54;
 
 body.searchlib-page {
   div#page-document {
@@ -114,11 +114,11 @@ body.searchlib-page {
               .sui-search-box__submit {
                 padding: 10px;
                 border: none;
+                margin-left: 5px;
                 background: @wm-light-gray3;
                 border-radius: 0px;
                 box-shadow: none;
                 color: @wm-dark-gray;
-                margin-left: 5px;
 
                 &:hover {
                   background: none;
@@ -182,8 +182,58 @@ body.searchlib-page {
           }
         }
 
-        div.col-left {
+        div.col-right {
           padding: 0px 1.5em 0px 1.5em;
+
+          .sui-facet {
+            font-family: 'RobotoL' !important;
+          }
+
+          .sui-facet__title {
+            display: none;
+          }
+
+          .facets-list .accordion.ui {
+            border-color: @wm-dark-blue3 !important;
+
+            .title {
+              padding-left: 5px;
+              background: @wm-light-gray3;
+              color: @wm-dark-blue3 !important;
+
+              &:hover {
+                color: @wm-light-gray2 !important;
+              }
+            }
+          }
+
+          .facets .accordion.ui:hover {
+            background-color: transparent !important;
+          }
+
+          .sui-facet-view-more {
+            color: @wm-light-blue3 !important;
+          }
+
+          .sui-facet-view-more:hover {
+            box-shadow: none !important;
+            outline: none !important;
+          }
+
+          .sui-facet-view-more:hover {
+            background-color: transparent !important;
+          }
+
+          .sui-multi-checkbox-facet__option-label {
+            margin-bottom: 0;
+            color: @wm-medium-gray;
+            font-size: 14px;
+            font-weight: normal !important;
+          }
+
+          .sui-multi-checkbox-facet__checkbox {
+            margin-right: 8px;
+          }
         }
       }
     }
@@ -220,7 +270,7 @@ body.searchlib-page {
 
 .searchapp-wise .sui-layout-main-body .item h4,
 .ui.modal > .header {
-  color: @wm-medium-gray2 !important;
+  color: @wm-dark-blue3 !important;
   font-family: 'PoppinsSemiB' !important;
   font-size: 20px !important;
 }
@@ -340,56 +390,6 @@ body.searchlib-page {
   border-right: none !important;
 }
 
-/* Facets */
-
-.searchapp-wise .sui-facet {
-  font-family: 'RobotoL' !important;
-}
-
-.searchapp-wise .sui-facet__title {
-  border-bottom: none;
-}
-
-.searchapp-wise .facets .accordion.ui {
-  border-color: @wm-medium-gray2 !important;
-}
-
-.searchapp-wise .facets .accordion.ui .title {
-  color: @wm-medium-gray2 !important;
-}
-
-.searchapp-wise .facets .accordion.ui .title:hover {
-  color: @wm-light-gray2 !important;
-}
-
-.searchapp-wise .facets .accordion.ui:hover {
-  background-color: transparent !important;
-}
-
-.searchapp-wise .sui-facet-view-more {
-  color: @wm-light-blue3 !important;
-}
-
-.searchapp-wise .sui-facet-view-more:hover {
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-.searchapp-wise .sui-facet-view-more:hover {
-  background-color: transparent !important;
-}
-
-.searchapp-wise .sui-multi-checkbox-facet__option-label {
-  margin-bottom: 0;
-  color: @wm-medium-gray;
-  font-size: 14px;
-  font-weight: normal !important;
-}
-
-.searchapp-wise .sui-multi-checkbox-facet__checkbox {
-  margin-right: 8px;
-}
-
 /* Modal */
 
 .ui.modal > .content {
@@ -399,7 +399,7 @@ body.searchlib-page {
 .ui.modal > .actions button {
   padding: 0.6em 1.3em;
   border: none;
-  background: @wm-medium-gray2;
+  background: @wm-dark-blue3;
   box-shadow: none;
   color: #fff;
 }
