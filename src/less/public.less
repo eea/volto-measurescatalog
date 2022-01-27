@@ -46,6 +46,40 @@ body.searchlib-page {
           margin-right: auto !important;
           margin-left: auto !important;
         }
+
+        .chart-wrapper {
+          height: 550px;
+          padding: 1em;
+          border: 1px solid @wm-light-gray6;
+        }
+
+        .chart-title {
+          color: @wm-medium-gray;
+          font-size: 15px;
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        .charts-intro-page {
+          .ui.table {
+            border-radius: 0 !important;
+
+            thead th {
+              border-left: none !important;
+              font-family: 'RobotoM' !important;
+              font-weight: normal !important;
+            }
+
+            thead th,
+            thead td {
+              border-bottom: none !important;
+            }
+
+            thead td {
+              border-left: none !important;
+            }
+          }
+        }
       }
 
       div.header-content {
@@ -407,42 +441,6 @@ body.searchlib-page {
 
 .listing-view-details .details-field-value {
   padding: 0.7em 0.5em 0.7em 1em !important;
-}
-
-/* Charts  */
-
-.chart-wrapper {
-  height: 550px;
-  padding: 1em;
-  border: 1px solid @wm-light-gray6;
-}
-
-.chart-title {
-  color: @wm-medium-gray;
-  font-size: 15px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-/* Table */
-
-.charts-intro-page .ui.table {
-  border-radius: 0 !important;
-}
-
-.charts-intro-page .ui.table thead th {
-  border-left: none !important;
-  font-family: 'RobotoM' !important;
-  font-weight: normal !important;
-}
-
-.charts-intro-page .ui.table thead th,
-.charts-intro-page .ui.table thead td {
-  border-bottom: none !important;
-}
-
-.charts-intro-page .ui.table thead td {
-  border-left: none !important;
 }
 
 @media only screen and (max-width: 1295px) {
