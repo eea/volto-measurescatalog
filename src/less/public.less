@@ -105,6 +105,27 @@ body.searchlib-page {
             div.sui-search-box {
               display: flex;
               max-width: 630px;
+
+              .sui-search-box__text-input {
+                padding: 10px;
+                border-radius: 0px;
+              }
+
+              .sui-search-box__submit {
+                padding: 10px;
+                border: none;
+                background: @wm-light-gray3;
+                border-radius: 0px;
+                box-shadow: none;
+                color: @wm-dark-gray;
+                margin-left: 5px;
+
+                &:hover {
+                  background: none;
+                  background-color: @wm-dark-blue !important;
+                  color: #fff;
+                }
+              }
             }
           }
         }
@@ -230,27 +251,6 @@ body.searchlib-page {
 
 .bottom-links h3 {
   margin-top: 20px !important;
-}
-
-/* Search box  */
-
-.searchapp-wise .sui-search-box__text-input {
-  padding: 10px;
-}
-
-.searchapp-wise .sui-search-box__submit {
-  padding: 10px;
-  border: none;
-  background: @wm-medium-gray2;
-  border-radius: 4px;
-  box-shadow: none;
-  color: #fff;
-}
-
-.searchapp-wise .sui-search-box__submit:hover {
-  background: none;
-  background-color: @wm-dark-blue !important;
-  color: #fff;
 }
 
 .searchapp-wise .sui-paging-info {
