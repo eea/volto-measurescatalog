@@ -1,5 +1,18 @@
 @wm-light-gray: #e8e8e8;
+@wm-light-gray2: #bec9d3;
+@wm-light-gray3: #eee;
+@wm-light-gray4: #e5e5e5;
+@wm-light-gray5: #f9f9f9;
+@wm-light-gray6: #ddd;
 @wm-medium-gray: #666;
+@wm-medium-gray2: #002d54;
+@wm-medium-gray3: #4d4d4d;
+@wm-dark-gray: rgba(0, 0, 0, 0.87);
+@wm-light-blue: #6bc6fa;
+@wm-light-blue2: #4183c4;
+@wm-light-blue3: #0077bc;
+@wm-dark-blue: #005588;
+@wm-dark-blue2: #064c7f;
 
 body.searchlib-page {
   div#page-document {
@@ -106,6 +119,12 @@ body.searchlib-page {
               }
             }
           }
+
+          div.items {
+            div.item {
+              margin-top: 2em;
+            }
+          }
         }
 
         div.col-left {
@@ -115,20 +134,26 @@ body.searchlib-page {
     }
   }
 
+  div.body-footer {
+    .sui-app-info {
+      display: none;
+    }
+  }
+
   div.footer-wrapper {
     margin-top: 5em;
   }
 }
 
 // ----------------------------------------------------------------------------
-// TODO colors palette, fonts, layout spacing - paddings, clean code
+// TODO fonts, layout spacing - paddings, clean code
 //
 
 .searchapp-wise .sui-layout-main-body,
 .searchapp-wise .ui.items > .item,
 .ui.modal > .content {
   margin-bottom: 2em;
-  color: rgba(0, 0, 0, 0.87);
+  color: @wm-dark-gray;
   font-family: 'RobotoL';
   font-size: 18px;
 }
@@ -138,17 +163,9 @@ body.searchlib-page {
   padding-left: 1rem;
 }
 
-.searchapp-wise .sui-app-info {
-  display: none;
-}
-
-.searchapp-wise .sui-layout-main-body .item {
-  margin-top: 2em;
-}
-
 .searchapp-wise .sui-layout-main-body .item h4,
 .ui.modal > .header {
-  color: #002d54 !important;
+  color: @wm-medium-gray2 !important;
   font-family: 'PoppinsSemiB' !important;
   font-size: 20px !important;
 }
@@ -170,7 +187,7 @@ body.searchlib-page {
 
 .searchapp-wise input:focus,
 .searchapp-wise .sui-select__control--is-focused {
-  border: 1px solid #6bc6fa !important;
+  border: 1px solid @wm-light-blue !important;
 }
 
 .searchapp-wise .sui-select__value-container--has-value {
@@ -190,7 +207,7 @@ body.searchlib-page {
 .searchapp-wise .sui-search-box__submit {
   padding: 10px;
   border: none;
-  background: #002d54;
+  background: @wm-medium-gray2;
   border-radius: 4px;
   box-shadow: none;
   color: #fff;
@@ -198,7 +215,7 @@ body.searchlib-page {
 
 .searchapp-wise .sui-search-box__submit:hover {
   background: none;
-  background-color: #005588 !important;
+  background-color: @wm-dark-blue !important;
   color: #fff;
 }
 
@@ -220,7 +237,7 @@ body.searchlib-page {
 
 .searchapp-wise .rc-pagination-item-active,
 .searchapp-wise .rc-pagination-item-active:hover {
-  background-color: #064c7f;
+  background-color: @wm-dark-blue2;
   color: #fff;
 }
 
@@ -237,13 +254,13 @@ body.searchlib-page {
 }
 
 #search-app .listing-view-item.header:hover {
-  color: #bec9d3 !important;
+  color: @wm-light-gray2 !important;
 }
 
 #search-app .searchapp-wise .simple-item-link {
-  color: #4183c4 !important;
-  font-family: 'RobotoR' !important;
   padding-left: 5px;
+  color: @wm-light-blue2 !important;
+  font-family: 'RobotoR' !important;
 }
 
 .searchapp-wise .extra .simple-item-label {
@@ -251,7 +268,7 @@ body.searchlib-page {
 }
 
 .searchapp-wise .extra .simple-item-extra:not(:last-child) {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid @wm-light-gray3;
 }
 
 .searchapp-wise .extra .simple-item-extra {
@@ -300,15 +317,15 @@ body.searchlib-page {
 }
 
 .searchapp-wise .facets .accordion.ui {
-  border-color: #002d54 !important;
+  border-color: @wm-medium-gray2 !important;
 }
 
 .searchapp-wise .facets .accordion.ui .title {
-  color: #002d54 !important;
+  color: @wm-medium-gray2 !important;
 }
 
 .searchapp-wise .facets .accordion.ui .title:hover {
-  color: #bec9d3 !important;
+  color: @wm-light-gray2 !important;
 }
 
 .searchapp-wise .facets .accordion.ui:hover {
@@ -316,7 +333,7 @@ body.searchlib-page {
 }
 
 .searchapp-wise .sui-facet-view-more {
-  color: #0077bc !important;
+  color: @wm-light-blue3 !important;
 }
 
 .searchapp-wise .sui-facet-view-more:hover {
@@ -330,7 +347,7 @@ body.searchlib-page {
 
 .searchapp-wise .sui-multi-checkbox-facet__option-label {
   margin-bottom: 0;
-  color: #4d4d4d;
+  color: @wm-medium-gray;
   font-size: 14px;
   font-weight: normal !important;
 }
@@ -348,14 +365,14 @@ body.searchlib-page {
 .ui.modal > .actions button {
   padding: 0.6em 1.3em;
   border: none;
-  background: #002d54;
+  background: @wm-medium-gray2;
   box-shadow: none;
   color: #fff;
 }
 
 .ui.modal > .actions button:hover {
   background: none;
-  background-color: #005588 !important;
+  background-color: @wm-dark-blue !important;
   color: #fff;
 }
 
@@ -368,11 +385,11 @@ body.searchlib-page {
 }
 
 .listing-view-details-section .details-field {
-  border-bottom: 1px solid #e5e5e5 !important;
+  border-bottom: 1px solid @wm-light-gray4 !important;
 }
 
 .listing-view-details-section .details-field:first-of-type {
-  border-top: 1px solid #e5e5e5 !important;
+  border-top: 1px solid @wm-light-gray4 !important;
 }
 
 .listing-view-details .details-field-label,
@@ -383,7 +400,7 @@ body.searchlib-page {
 .listing-view-details .details-field-label {
   padding: 0.7em 1em 0.7em 0.7em !important;
   border-right: none !important;
-  background-color: #f9f9f9 !important;
+  background-color: @wm-light-gray5 !important;
   font-family: 'RobotoM' !important;
   font-weight: normal !important;
 }
@@ -397,11 +414,11 @@ body.searchlib-page {
 .chart-wrapper {
   height: 450px;
   padding: 1em;
-  border: 1px solid #ddd;
+  border: 1px solid @wm-light-gray6;
 }
 
 .chart-title {
-  color: #666;
+  color: @wm-medium-gray;
   font-size: 15px;
   text-align: center;
   text-transform: uppercase;
