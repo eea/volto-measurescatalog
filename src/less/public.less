@@ -14,13 +14,16 @@
 @wm-dark-blue2: #064c7f;
 @wm-dark-blue3: #002d54;
 
+@wm-ff1: 'RobotoR', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@wm-ff2: 'PoppinsExtraB', 'PoppinsB', 'Poppins';
+
 body.searchlib-page {
   div#page-document {
     top: 0px;
 
     div.searchapp.searchapp-wise {
       background-color: #fff !important;
-      font-family: 'RobotoL' !important;
+      font-family: @wm-ff1 !important;
 
       div#search-app {
         .row {
@@ -66,7 +69,7 @@ body.searchlib-page {
 
             thead th {
               border-left: none !important;
-              font-family: 'RobotoM' !important;
+              font-family: @wm-ff1 !important;
               font-weight: normal !important;
             }
 
@@ -186,7 +189,7 @@ body.searchlib-page {
           padding: 0px 1.5em 0px 1.5em;
 
           .sui-facet {
-            font-family: 'RobotoL' !important;
+            font-family: @wm-ff1 !important;
           }
 
           .sui-facet__title {
@@ -259,7 +262,7 @@ body.searchlib-page {
 .ui.modal > .content {
   margin-bottom: 2em;
   color: @wm-dark-gray;
-  font-family: 'RobotoL';
+  font-family: @wm-ff1 !important;
   font-size: 18px;
 }
 
@@ -271,7 +274,7 @@ body.searchlib-page {
 .searchapp-wise .sui-layout-main-body .item h4,
 .ui.modal > .header {
   color: @wm-dark-blue3 !important;
-  font-family: 'PoppinsSemiB' !important;
+  font-family: @wm-ff1 !important;
   font-size: 20px !important;
 }
 
@@ -281,7 +284,7 @@ body.searchlib-page {
 .searchapp-wise .sui-search-box,
 .sui-facet-search__text-input,
 .searchapp-wise .sui-facet-view-more {
-  font-family: 'PoppinsR' !important;
+  font-family: @wm-ff1 !important;
   font-size: 14px !important;
 }
 
@@ -296,7 +299,7 @@ body.searchlib-page {
 }
 
 .searchapp-wise .sui-select__value-container--has-value {
-  font-family: 'PoppinsSemiB' !important;
+  font-family: @wm-ff1 !important;
 }
 
 .bottom-links h3 {
@@ -358,7 +361,7 @@ div#page-document
 
 .listing-view-item.header {
   cursor: pointer !important;
-  font-family: 'PoppinsSemiB' !important;
+  font-family: @wm-ff1 !important;
   font-size: 18px !important;
 }
 
@@ -369,11 +372,11 @@ div#page-document
 #search-app .searchapp-wise .simple-item-link {
   padding-left: 5px;
   color: @wm-light-blue2 !important;
-  font-family: 'RobotoR' !important;
+  font-family: @wm-ff1 !important;
 }
 
 .searchapp-wise .extra .simple-item-label {
-  font-family: 'RobotoM' !important;
+  font-family: @wm-ff1 !important;
 }
 
 .searchapp-wise .extra .simple-item-extra:not(:last-child) {
@@ -397,7 +400,8 @@ div#page-document
 }
 
 .searchapp-wise .ui.celled.table tr th {
-  font-family: 'RobotoM' !important;
+  // font-family: 'RobotoM' !important;
+      font-family: @wm-ff1 !important;
   font-size: 16px;
   font-weight: normal !important;
 }
@@ -460,7 +464,8 @@ div#page-document
   padding: 0.7em 1em 0.7em 0.7em !important;
   border-right: none !important;
   background-color: @wm-light-gray5 !important;
-  font-family: 'RobotoM' !important;
+  // font-family: 'RobotoM' !important;
+      font-family: @wm-ff1 !important;
   font-weight: normal !important;
 }
 
