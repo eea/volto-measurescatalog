@@ -1,4 +1,4 @@
-import { suiFacet, mergeConfig, multiTermFacet } from '@eeacms/search';
+import { suiFacet } from '@eeacms/search';
 import WiseLayout from './components/WiseLayout';
 import ChartsIntro from './components/ChartsIntro';
 import ListingViewItem from './components/ListingViewItem';
@@ -166,11 +166,8 @@ export const wise_config = {
   elastic_index: 'wise_catalogue_measures',
   enableNLP: false,
   layoutComponent: 'WiseLayout',
-  // facetsListComponent: 'VerticalCardsModalFacets',
   facetsListComponent: 'DefaultFacetsList',
   searchBoxInputComponent: 'SimpleSearchInput',
-  // searchBoxInputComponent: 'DefaultSearchInput',
-  // searchBoxInputComponent: 'searchui.SearchBox',
   useSearchPhrases: false,
   searchAsYouType: false,
   searchInputPlaceholder: 'What are you looking for?',
