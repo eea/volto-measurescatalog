@@ -181,6 +181,16 @@ body.searchlib-page {
           div.items {
             div.item {
               margin-top: 2em;
+
+              div.content {
+                h4 {
+                  margin-bottom: 0.5em;
+                }
+
+                a {
+                  color: @wm-dark-blue3 !important;
+                }
+              }
             }
           }
         }
@@ -254,10 +264,6 @@ body.searchlib-page {
     margin-top: 5em;
   }
 }
-
-// ----------------------------------------------------------------------------
-// TODO fonts, layout spacing - paddings, clean code
-//
 
 .searchapp-wise .sui-layout-main-body,
 .searchapp-wise .ui.items > .item,
@@ -388,8 +394,8 @@ div#page-document
 
 .searchapp-wise .extra .simple-item-extra {
   width: 100%;
-  padding: 7px 0;
-  font-size: 16px;
+  padding: 0px;
+  font-size: 14px;
 }
 
 .searchapp-wise .descriptor-item .array-string-item {
@@ -404,16 +410,17 @@ div#page-document
 
 .searchapp-wise .ui.celled.table tr th {
   font-family: @wm-ff2 !important;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500 !important;
 }
 
 .searchapp-wise .ui.celled.table tr td h4 {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .searchapp-wise .ui.celled.table tr td {
   border-bottom: none !important;
+  font-size: 14px;
 }
 
 .searchapp-wise .ui.celled.table tr th,
