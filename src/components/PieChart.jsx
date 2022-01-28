@@ -25,7 +25,7 @@ export const PieChart = ({ data, ...rest }) => (
         direction: 'column',
         justify: false,
         translateX: -30,
-        translateY: 350,
+        translateY: 440,
         itemWidth: 100,
         itemHeight: 20,
         itemsSpacing: 0,
