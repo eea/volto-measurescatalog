@@ -214,7 +214,15 @@ body.searchlib-page {
               background: @wm-light-gray3;
               color: @wm-dark-blue3 !important;
               font-family: @wm-ff2 !important;
+              font-size: 16px;
               font-weight: 500;
+
+              &.active {
+                i.dropdown.icon {
+                  position: relative;
+                  top: 5px;
+                }
+              }
 
               &:hover {
                 color: @wm-light-gray2 !important;
