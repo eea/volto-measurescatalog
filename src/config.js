@@ -335,7 +335,25 @@ export const wise_config = {
     ],
     details,
   },
-  download_fields: [],
+
+  download_fields: [
+    {
+      field: 'Measure name',
+      name: 'Measure name',
+    },
+    {
+      field: 'Origin of the measure',
+      name: 'Origin of the measure',
+    },
+    {
+      field: 'Descriptors',
+      name: 'MSFD Descriptors',
+    },
+    {
+      field: 'Sector',
+      name: 'Sector',
+    },
+  ],
 
   resultItemModel: {
     factory: 'ResultModelExtended',

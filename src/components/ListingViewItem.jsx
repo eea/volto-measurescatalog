@@ -35,6 +35,7 @@ const Inner = (props) => {
     return result.getVal(field);
   };
 
+  console.log(result);
   return (
     <Item>
       <Item.Content>
