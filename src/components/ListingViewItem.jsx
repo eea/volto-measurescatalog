@@ -2,7 +2,7 @@ import React from 'react';
 import { Item } from 'semantic-ui-react';
 import { useAppConfig } from '@eeacms/search';
 import { String } from '@eeacms/search';
-import { Header } from '@eeacms/search';
+import { ResultHeader } from '@eeacms/search';
 
 const DescriptorItem = (props) => {
   const { descriptor, facets } = props;
@@ -38,7 +38,7 @@ const Inner = (props) => {
   return (
     <Item>
       <Item.Content>
-        <Header {...props} {...listingViewParams} appConfig={appConfig} />
+        <ResultHeader {...props} {...listingViewParams} appConfig={appConfig} />
         <Item.Extra>
           {listingViewParams?.extraFields?.map(({ field, label }, i) =>
             field === 'Descriptors' ? (
