@@ -358,6 +358,22 @@ export const wise_config = {
   resultItemModel: {
     factory: 'ResultModelExtended',
   },
+
+  vocab: {
+    Descriptors: {
+      D1: 'D1. Biodiversity',
+      D2: 'D2. Non-indigenous Species',
+      D3: 'D3.  Commercial Fish and shellfish',
+      D4: 'D4. Food Webs',
+      D5: 'D5. Eutrophication',
+      D6: 'D6. Sea-floor Integrity',
+      D7: 'D7. Hydrographical Conditions',
+      D8: 'D8. Contaminants',
+      D9: 'D9. Contaminants in Seafood',
+      D10: 'D10. Marine Litter',
+      D11: 'D11. Energy including Underwater Noise',
+    },
+  },
 };
 
 export const wise_resolve = {
