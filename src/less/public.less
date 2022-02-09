@@ -135,6 +135,20 @@ body.searchlib-page {
           padding: 0px 1.5em 0px 1.5em;
           margin-top: 0px;
 
+          .filter-list-header {
+            padding: 1em 1em 1em 1em !important;
+
+            .button {
+              font-size: 12px !important;
+            }
+          }
+
+          .filter-list-content {
+            div.divider {
+              margin: 0px 0px 1.5em 0px !important;
+            }
+          }
+
           div.above-results {
             display: flex;
 
@@ -348,8 +362,10 @@ div.search-body-footer {
 
 /* Filter list  */
 
-.filter-list-header .button {
-  font-size: 12px !important;
+.filter-list-header {
+  .button {
+    font-size: 12px !important;
+  }
 }
 
 div.filter-list {
