@@ -245,6 +245,8 @@ const ChartsIntro = (props) => {
                     Origin of the measure/Descriptors
                   </h3>
                   <BarChart
+                    fieldX="Descriptors"
+                    fieldY="Origin of the measure"
                     data={barData}
                     keys={Object.keys(barData[1] || {}) // [0] doesn't have all keys
                       .filter((k) => k !== 'Descriptor')
