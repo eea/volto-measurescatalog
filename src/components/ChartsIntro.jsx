@@ -221,13 +221,18 @@ const ChartsIntro = (props) => {
                   <PieChart
                     data={getOriginOfMeasure(chartData)}
                     valueFormat=">-.2%"
+                    field="Origin of the measure"
                   />
                 </div>
               </Grid.Column>
               <Grid.Column>
                 <div className="chart-wrapper">
                   <h3 className="chart-title">Sectors</h3>
-                  <PieChart data={getSectors(chartData)} valueFormat=">-.2%" />
+                  <PieChart
+                    data={getSectors(chartData)}
+                    valueFormat=">-.2%"
+                    field="Sector"
+                  />
                 </div>
               </Grid.Column>
             </Grid.Row>
