@@ -1,13 +1,10 @@
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
-import { useAppConfig } from '@eeacms/search/lib/hocs';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
 
 export const PieChart = ({ data, field, ...rest }) => {
-  const { appConfig } = useAppConfig();
-
   const searchContext = useSearchContext();
-  const { filters = [], addFilter, removeFilter } = searchContext;
+  const { addFilter } = searchContext;
 
   let searchOnClick = false;
   if (field !== undefined) {
@@ -35,12 +32,9 @@ export const PieChart = ({ data, field, ...rest }) => {
       fill={[]}
       onClick={(node, event) => {
         if (searchOnClick) {
-          console.log('SEARCH for field: ', field, ' value: ', node.id);
-          // // addFilter(field, value, filterType);
-          // console.log(searchOnClick);
-          // console.log(node.id, event);
+          addFilter(field, node.id, 'any');
         } else {
-          console.log('Unknown field.');
+          // console.log('Unknown field.');
         }
       }}
       legends={[
