@@ -43,7 +43,7 @@ export const BarChart = ({
           addFilter(fieldX, node.data.Descriptor, 'any');
           addFilter(fieldY, node.id, 'any');
         } else {
-          console.log("Not set.");
+          // console.log("Not set.");
         }
       }}
       defs={[
