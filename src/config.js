@@ -176,6 +176,15 @@ export const wise_config = {
 
   facets: [
     suiFacet({
+      field: 'Measure Impacts to',
+      label: 'Measure impacts to',
+      isMulti: true,
+      isFilterable: false,
+      show: 100,
+      factory: 'MultiTermFacet',
+      wrapper: 'AccordionFacetWrapper',
+    }),
+    suiFacet({
       field: 'Origin of the measure',
       label: 'Origin of the measure',
       isMulti: true,

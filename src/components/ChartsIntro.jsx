@@ -212,7 +212,11 @@ const ChartsIntro = (props) => {
               <Grid.Column>
                 <div className="chart-wrapper">
                   <h3 className="chart-title">Measure impacts to</h3>
-                  <PieChart data={measureData} valueFormat=">-.2%" />
+                  <PieChart
+                    data={measureData}
+                    valueFormat=">-.2%"
+                    field="Measure Impacts to"
+                  />
                 </div>
               </Grid.Column>
               <Grid.Column>
