@@ -3,6 +3,8 @@ import { runRequest } from '@eeacms/search';
 import { PieChart } from './PieChart';
 import { BarChart } from './BarChart';
 import { Grid, Table } from 'semantic-ui-react'; // , Segment
+import { Button } from 'semantic-ui-react';
+import { useSearchContext } from '@eeacms/search/lib/hocs';
 
 // const getPercentage = (value, total) => {
 //   return (value * 100) / total;
@@ -196,12 +198,25 @@ const ChartsIntro = (props) => {
     parseInt(a.Descriptor.slice(1)) > parseInt(b.Descriptor.slice(1)) ? 1 : -1,
   );
   const measureData = chartData ? getMeasureImpacts(chartData) : [];
-  console.log('measureData', measureData, chartData);
+  // console.log('measureData', measureData, chartData);
   // console.log('all', chartData);
   // console.log('barData', barData);
+  const { setSearchTerm } = useSearchContext();
 
   return (
     <div className="charts-intro-page">
+      <div className="browse-catalog">
+        <Button
+          as="a"
+          basic
+          onClick={(evt) => {
+            evt.preventDefault();
+            setSearchTerm('""', { shouldClearFilters: false });
+          }}
+        >
+          Browse Catalog
+        </Button>
+      </div>
       {chartData ? (
         <>
           <div id="content-text-target" ref={targetNode}>
