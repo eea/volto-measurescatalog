@@ -163,6 +163,7 @@ const details = {
 export const wise_config = {
   // host: 'http://localhost:7000',
   title: 'Catalogue of Measures',
+  titleIsLink: true,
   elastic_index: 'wise_catalogue_measures',
   enableNLP: false,
   layoutComponent: 'WiseLayout',
