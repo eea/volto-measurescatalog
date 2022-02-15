@@ -3,6 +3,9 @@
 import React from 'react';
 import { ResponsiveBar } from '@nivo/bar';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
+import { openFacetsAtom } from '@eeacms/search/components/Facets/state';
+import { useAtom } from 'jotai';
+import { useUpdateAtom } from 'jotai/utils';
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
@@ -27,6 +30,9 @@ export const BarChart = ({
   const searchContext = useSearchContext();
   const { addFilter } = searchContext;
 
+  const [openFacets] = useAtom(openFacetsAtom);
+  const updateOpenFacets = useUpdateAtom(openFacetsAtom);
+
   return (
     <ResponsiveBar
       data={data}
@@ -40,6 +46,10 @@ export const BarChart = ({
       colors={{ scheme: 'nivo' }}
       onClick={(node, event) => {
         if (searchOnClick) {
+          let temp = openFacets;
+          temp[fieldX] = { opened: true };
+          temp[fieldY] = { opened: true };
+          updateOpenFacets(temp);
           addFilter(fieldX, node.data.Descriptor, 'any');
           addFilter(fieldY, node.id, 'any');
         } else {
