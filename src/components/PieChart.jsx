@@ -1,6 +1,9 @@
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
+import { openFacetsAtom } from '@eeacms/search/components/Facets/state';
+import { useAtom } from 'jotai';
+import { useUpdateAtom } from 'jotai/utils';
 
 export const PieChart = ({ data, field, ...rest }) => {
   const searchContext = useSearchContext();
@@ -10,6 +13,9 @@ export const PieChart = ({ data, field, ...rest }) => {
   if (field !== undefined) {
     searchOnClick = true;
   }
+
+  const [openFacets] = useAtom(openFacetsAtom);
+  const updateOpenFacets = useUpdateAtom(openFacetsAtom);
 
   return (
     <ResponsivePie
@@ -32,6 +38,9 @@ export const PieChart = ({ data, field, ...rest }) => {
       fill={[]}
       onClick={(node, event) => {
         if (searchOnClick) {
+          let temp = openFacets;
+          temp[field] = { opened: true };
+          updateOpenFacets(temp);
           addFilter(field, node.id, 'any');
         } else {
           // console.log('Unknown field.');
