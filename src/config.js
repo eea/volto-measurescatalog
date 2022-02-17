@@ -1,5 +1,6 @@
 import { suiFacet } from '@eeacms/search';
 import WiseLayout from './components/WiseLayout';
+import WiseLayoutTest from './components/WiseLayoutTest';
 import ChartsIntro from './components/ChartsIntro';
 import ListingViewItem from './components/ListingViewItem';
 import { ResultModelExtended } from './models';
@@ -158,6 +159,232 @@ const details = {
       ],
     },
   ],
+};
+
+export const wise_minimal_config = {
+  // host: 'http://localhost:7000',
+  title: 'Catalogue of Measures',
+  titleIsLink: true,
+  elastic_index: 'wise_catalogue_measures',
+  enableNLP: false,
+  layoutComponent: 'WiseLayoutTest',
+  facetsListComponent: 'DefaultFacetsList',
+  searchBoxInputComponent: 'SimpleSearchInput',
+  useSearchPhrases: false,
+  searchAsYouType: false,
+  searchInputPlaceholder: 'What are you looking for?',
+
+  permanentFilters: [],
+
+  facets: [
+    suiFacet({
+      field: 'Measure Impacts to',
+      label: 'Measure impacts to',
+      isMulti: true,
+      isFilterable: false,
+      show: 100,
+      factory: 'MultiTermFacet',
+      wrapper: 'AccordionFacetWrapper',
+    }),
+    suiFacet({
+      field: 'Origin of the measure',
+      label: 'Origin of the measure',
+      isMulti: true,
+      isFilterable: false,
+      show: 100,
+      factory: 'MultiTermFacet',
+      wrapper: 'AccordionFacetWrapper',
+    }),
+    suiFacet({
+      field: 'Sector',
+      isMulti: true,
+      isFilterable: false,
+      show: 100,
+      factory: 'MultiTermFacet',
+      wrapper: 'AccordionFacetWrapper',
+    }),
+    suiFacet({
+      field: 'Descriptors',
+      isMulti: true,
+      isFilterable: false,
+      show: 100,
+      factory: 'MultiTermFacet',
+      wrapper: 'AccordionFacetWrapper',
+      facetValues: [
+        {
+          value: 'D1',
+          name: 'D1. Biodiversity',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-1/index_en.htm',
+        },
+        {
+          value: 'D2',
+          name: 'D2. Non-indigenous Species',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-2/index_en.htm',
+        },
+        {
+          value: 'D3',
+          name: 'D3.  Commercial Fish and shellfish',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-3/index_en.htm',
+        },
+        {
+          value: 'D4',
+          name: 'D4. Food Webs',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-4/index_en.htm',
+        },
+        {
+          value: 'D5',
+          name: 'D5. Eutrophication',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-5/index_en.htm',
+        },
+        {
+          value: 'D6',
+          name: 'D6. Sea-floor Integrity',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-6/index_en.htm',
+        },
+        {
+          value: 'D7',
+          name: 'D7. Hydrographical Conditions',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-7/index_en.htm',
+        },
+        {
+          value: 'D8',
+          name: 'D8. Contaminants',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-8/index_en.htm',
+        },
+        {
+          value: 'D9',
+          name: 'D9. Contaminants in Seafood',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-9/index_en.htm',
+        },
+        {
+          value: 'D10',
+          name: 'D10. Marine Litter',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-10/index_en.htm',
+        },
+        {
+          value: 'D11',
+          name: 'D11. Energy including Underwater Noise',
+          url:
+            'https://ec.europa.eu/environment/marine/good-environmental-status/descriptor-11/index_en.htm',
+        },
+      ],
+    }),
+  ],
+  highlight: {
+    queryParams: {
+      fragment_size: 200,
+      number_of_fragments: 3,
+    },
+    fields: ['description'],
+    queryBuilder: {
+      factory: 'highlightQueryBuilder',
+    },
+  },
+
+  sortOptions: [
+    {
+      name: 'Title',
+      value: 'Measure name',
+      direction: 'asc',
+    },
+  ],
+  tableViewParams: {
+    titleField: 'Measure name',
+    columns: [
+      {
+        title: 'Measure name',
+        field: 'Measure name',
+      },
+      {
+        title: 'Code',
+        field: 'id',
+      },
+      {
+        title: 'Origin of the measure',
+        field: 'Origin of the measure',
+      },
+      {
+        field: 'Descriptors',
+        label: 'MSFD Descriptors',
+      },
+      {
+        field: 'Sector',
+        label: 'Sector',
+      },
+    ],
+    details,
+  },
+  initialView: {
+    factory: 'ChartsIntro',
+  },
+  listingViewParams: {
+    titleField: 'Measure name',
+    // urlField: 'CodeCatalogue',
+    extraFields: [
+      {
+        field: 'Origin of the measure',
+        label: 'Origin of the measure',
+      },
+      {
+        field: 'Descriptors',
+        label: 'MSFD Descriptors',
+      },
+      {
+        field: 'Sector',
+        label: 'Sector',
+      },
+    ],
+    details,
+  },
+
+  download_fields: [
+    {
+      field: 'Measure name',
+      name: 'Measure name',
+    },
+    {
+      field: 'Origin of the measure',
+      name: 'Origin of the measure',
+    },
+    {
+      field: 'Descriptors',
+      name: 'MSFD Descriptors',
+    },
+    {
+      field: 'Sector',
+      name: 'Sector',
+    },
+  ],
+
+  resultItemModel: {
+    factory: 'ResultModelExtended',
+  },
+
+  vocab: {
+    Descriptors: {
+      D1: 'D1. Biodiversity',
+      D2: 'D2. Non-indigenous Species',
+      D3: 'D3.  Commercial Fish and shellfish',
+      D4: 'D4. Food Webs',
+      D5: 'D5. Eutrophication',
+      D6: 'D6. Sea-floor Integrity',
+      D7: 'D7. Hydrographical Conditions',
+      D8: 'D8. Contaminants',
+      D9: 'D9. Contaminants in Seafood',
+      D10: 'D10. Marine Litter',
+      D11: 'D11. Energy including Underwater Noise',
+    },
+  },
 };
 
 export const wise_config = {
@@ -389,6 +616,9 @@ export const wise_config = {
 export const wise_resolve = {
   WiseLayout: {
     component: WiseLayout,
+  },
+  WiseLayoutTest: {
+    component: WiseLayoutTest,
   },
   ChartsIntro: {
     component: ChartsIntro,

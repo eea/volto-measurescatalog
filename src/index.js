@@ -1,6 +1,6 @@
 import React from 'react';
 import { mergeConfig } from '@eeacms/search';
-import { wise_config, wise_resolve } from './config';
+import { wise_config, wise_minimal_config, wise_resolve } from './config';
 
 import 'regenerator-runtime/runtime'; // compatibility with react-speech-recognition
 
@@ -26,17 +26,31 @@ export function installMeasuresCatalogue(config) {
   registry.searchui.wise.resultViews[0].icon = 'list';
   registry.searchui.wise.resultViews[1].icon = 'table';
 
+  const envConfigMin = mergeConfig(
+    wise_minimal_config,
+    registry.searchui.default,
+  );
+  registry.searchui.wisemin = envConfigMin;
+  registry.searchui.wisemin.resultViews[0].icon = 'list';
+  registry.searchui.wisemin.resultViews[1].icon = 'table';
+
   // making it suitable for es middleware
   registry.searchui.wise.elastic_index = `_es/wise`;
+  registry.searchui.wisemin.elastic_index = `_es/wise`;
 
   envConfig.app_name = pjson.name;
   envConfig.app_version = pjson.version;
+
+  envConfigMin.app_name = pjson.name;
+  envConfigMin.app_version = pjson.version;
 
   if (
     typeof window !== 'undefined'
     // && process.env.RAZZLE_USE_ES_PROXY === 'true'
   ) {
     registry.searchui.wise.host =
+      process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
+    registry.searchui.wisemin.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
 
