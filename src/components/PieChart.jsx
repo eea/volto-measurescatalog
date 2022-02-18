@@ -40,11 +40,8 @@ export const PieChart = ({ data, field, ...rest }) => {
       fill={[]}
       onClick={(node, event) => {
         if (searchOnClick) {
-          console.log(appConfig.wiseSearchPath);
           const getUrl = window.location;
           const baseUrl = getUrl.protocol + '//' + getUrl.host;
-          console.log(getUrl);
-          console.log(baseUrl);
           window.location.replace(baseUrl + appConfig.wiseSearchPath);
           // let temp = openFacets;
           // temp[field] = { opened: true };

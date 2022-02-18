@@ -1,6 +1,6 @@
 import { suiFacet } from '@eeacms/search';
 import WiseLayout from './components/WiseLayout';
-import WiseLayoutTest from './components/WiseLayoutTest';
+import WiseLayoutCharts from './components/WiseLayoutCharts';
 import ChartsIntro from './components/ChartsIntro';
 import ListingViewItem from './components/ListingViewItem';
 import { ResultModelExtended } from './models';
@@ -167,7 +167,7 @@ export const wise_minimal_config = {
   titleIsLink: true,
   elastic_index: 'wise_catalogue_measures',
   enableNLP: false,
-  layoutComponent: 'WiseLayoutTest',
+  layoutComponent: 'WiseLayoutCharts',
   wiseSearchPath: '/catalogue',
 
   permanentFilters: [],
@@ -202,6 +202,7 @@ export const wise_minimal_config = {
   resultItemModel: {
     factory: 'ResultModelExtended',
   },
+
 };
 
 export const wise_config = {
@@ -431,8 +432,8 @@ export const wise_resolve = {
   WiseLayout: {
     component: WiseLayout,
   },
-  WiseLayoutTest: {
-    component: WiseLayoutTest,
+  WiseLayoutCharts: {
+    component: WiseLayoutCharts,
   },
   ChartsIntro: {
     component: ChartsIntro,
