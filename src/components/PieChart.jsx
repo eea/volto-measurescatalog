@@ -4,6 +4,7 @@ import { useSearchContext } from '@eeacms/search/lib/hocs';
 import { openFacetsAtom } from '@eeacms/search/components/Facets/state';
 import { useAtom } from 'jotai';
 import { useUpdateAtom } from 'jotai/utils';
+import { useAppConfig } from '@eeacms/search';
 
 export const PieChart = ({ data, field, ...rest }) => {
   const searchContext = useSearchContext();
@@ -16,6 +17,7 @@ export const PieChart = ({ data, field, ...rest }) => {
 
   const [openFacets] = useAtom(openFacetsAtom);
   const updateOpenFacets = useUpdateAtom(openFacetsAtom);
+  const { appConfig } = useAppConfig();
 
   return (
     <ResponsivePie
@@ -38,10 +40,16 @@ export const PieChart = ({ data, field, ...rest }) => {
       fill={[]}
       onClick={(node, event) => {
         if (searchOnClick) {
-          let temp = openFacets;
-          temp[field] = { opened: true };
-          updateOpenFacets(temp);
-          addFilter(field, node.id, 'any');
+          console.log(appConfig.wiseSearchPath);
+          const getUrl = window.location;
+          const baseUrl = getUrl.protocol + '//' + getUrl.host;
+          console.log(getUrl);
+          console.log(baseUrl);
+          window.location.replace(baseUrl + appConfig.wiseSearchPath);
+          // let temp = openFacets;
+          // temp[field] = { opened: true };
+          // updateOpenFacets(temp);
+          // addFilter(field, node.id, 'any');
         } else {
           // console.log('Unknown field.');
         }

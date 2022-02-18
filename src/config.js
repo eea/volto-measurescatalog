@@ -168,6 +168,7 @@ export const wise_minimal_config = {
   elastic_index: 'wise_catalogue_measures',
   enableNLP: false,
   layoutComponent: 'WiseLayoutTest',
+  wiseSearchPath: '/catalogue',
 
   permanentFilters: [],
 
@@ -365,9 +366,6 @@ export const wise_config = {
       },
     ],
     details,
-  },
-  initialView: {
-    factory: 'ChartsIntro',
   },
   listingViewParams: {
     titleField: 'Measure name',
