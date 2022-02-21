@@ -1,22 +1,14 @@
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
-import { openFacetsAtom } from '@eeacms/search/components/Facets/state';
-import { useAtom } from 'jotai';
-import { useUpdateAtom } from 'jotai/utils';
 import { useAppConfig } from '@eeacms/search';
 
 export const PieChart = ({ data, field, ...rest }) => {
-  const searchContext = useSearchContext();
-  const { addFilter } = searchContext;
-
   let searchOnClick = false;
   if (field !== undefined) {
     searchOnClick = true;
   }
 
-  const [openFacets] = useAtom(openFacetsAtom);
-  const updateOpenFacets = useUpdateAtom(openFacetsAtom);
   const { appConfig } = useAppConfig();
 
   return (
