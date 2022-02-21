@@ -18,6 +18,20 @@
 @wm-ff2: 'PoppinsExtraB', 'PoppinsB', 'Poppins';
 
 body.searchlib-page {
+  div.searchapp-wisemin {
+    &.landing-page {
+      div.nine.col-left {
+        width: 100% !important;
+      }
+
+      div.three.col-right {
+        display: none !important;
+      }
+    }
+  }
+}
+
+body.searchlib-page {
   div#page-document {
     top: 0px;
 
@@ -37,14 +51,6 @@ body.searchlib-page {
       }
 
       &.landing-page {
-        div.nine.col-left {
-          width: 100% !important;
-        }
-
-        div.three.col-right {
-          display: none !important;
-        }
-
         .browse-catalog {
           position: relative;
           top: -1.5em;
