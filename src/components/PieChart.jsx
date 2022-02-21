@@ -1,6 +1,5 @@
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
-import { useSearchContext } from '@eeacms/search/lib/hocs';
 import { useAppConfig } from '@eeacms/search';
 
 export const PieChart = ({ data, field, ...rest }) => {
