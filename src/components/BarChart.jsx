@@ -2,10 +2,7 @@
 // yarn add @nivo/core @nivo/bar
 import React from 'react';
 import { ResponsiveBar } from '@nivo/bar';
-import { useSearchContext } from '@eeacms/search/lib/hocs';
-import { openFacetsAtom } from '@eeacms/search/components/Facets/state';
-import { useAtom } from 'jotai';
-import { useUpdateAtom } from 'jotai/utils';
+import { useAppConfig } from '@eeacms/search';
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
@@ -27,11 +24,7 @@ export const BarChart = ({
     searchOnClick = true;
   }
 
-  const searchContext = useSearchContext();
-  const { addFilter } = searchContext;
-
-  const [openFacets] = useAtom(openFacetsAtom);
-  const updateOpenFacets = useUpdateAtom(openFacetsAtom);
+  const { appConfig } = useAppConfig();
 
   return (
     <ResponsiveBar
@@ -46,12 +39,34 @@ export const BarChart = ({
       colors={{ scheme: 'nivo' }}
       onClick={(node, event) => {
         if (searchOnClick) {
-          let temp = openFacets;
-          temp[fieldX] = { opened: true };
-          temp[fieldY] = { opened: true };
-          updateOpenFacets(temp);
-          addFilter(fieldX, node.data.Descriptor, 'any');
-          addFilter(fieldY, node.id, 'any');
+          const getUrl = window.location;
+          const baseUrl = getUrl.protocol + '//' + getUrl.host;
+          const newUrl =
+            baseUrl +
+            appConfig.wiseSearchPath +
+            '?' +
+            'size=n_10_n&' +
+            encodeURIComponent('filters[0][field]') +
+            '=' +
+            encodeURIComponent(fieldX) +
+            '&' +
+            encodeURIComponent('filters[0][values][0]') +
+            '=' +
+            encodeURIComponent(node.data.Descriptor) +
+            '&' +
+            encodeURIComponent('filters[0][type]') +
+            '=any&' +
+            encodeURIComponent('filters[1][field]') +
+            '=' +
+            encodeURIComponent(fieldY) +
+            '&' +
+            encodeURIComponent('filters[1][values][0]') +
+            '=' +
+            encodeURIComponent(node.id) +
+            '&' +
+            encodeURIComponent('filters[1][type]') +
+            '=any';
+          window.location.replace(newUrl);
         } else {
           // console.log("Not set.");
         }
