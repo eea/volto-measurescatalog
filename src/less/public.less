@@ -25,7 +25,7 @@ body.searchlib-page {
       font-weight: 600;
     }
 
-    div.searchapp.searchapp-wise {
+    div.searchapp {
       background-color: #fff !important;
       font-family: @wm-ff1 !important;
 
@@ -37,13 +37,13 @@ body.searchlib-page {
       }
 
       &.landing-page {
-        // div.nine.col-left {
-        //   width: 100% !important;
-        // }
+        div.nine.col-left {
+          width: 100% !important;
+        }
 
-        // div.three.col-right {
-        //   display: none !important;
-        // }
+        div.three.col-right {
+          display: none !important;
+        }
 
         .browse-catalog {
           position: relative;
@@ -313,8 +313,8 @@ body.searchlib-page {
   }
 }
 
-.searchapp-wise .sui-layout-main-body,
-.searchapp-wise .ui.items > .item,
+.searchapp .sui-layout-main-body,
+.searchapp .ui.items > .item,
 .ui.modal > .content {
   margin-bottom: 2em;
   color: @wm-dark-gray;
@@ -327,38 +327,38 @@ body.searchlib-page {
   padding-left: 1rem;
 }
 
-.searchapp-wise .sui-layout-main-body .item h4,
+.searchapp .sui-layout-main-body .item h4,
 .ui.modal > .header {
   color: @wm-dark-blue3 !important;
   font-family: @wm-ff2 !important;
   font-size: 20px !important;
 }
 
-.searchapp-wise .sui-results-per-page,
-.searchapp-wise .sui-select,
-.searchapp-wise .sui-search-box,
+.searchapp .sui-results-per-page,
+.searchapp .sui-select,
+.searchapp .sui-search-box,
 .sui-facet-search__text-input,
-.searchapp-wise .sui-facet-view-more {
+.searchapp .sui-facet-view-more {
   font-family: @wm-ff1 !important;
   font-size: 14px !important;
 }
 
-.searchapp-wise .sui-paging-info {
+.searchapp .sui-paging-info {
   font-family: @wm-ff1 !important;
   font-size: 12px !important;
 }
 
-.searchapp-wise a,
-.searchapp-wise a:hover {
+.searchapp a,
+.searchapp a:hover {
   color: inherit !important;
 }
 
-.searchapp-wise input:focus,
-.searchapp-wise .sui-select__control--is-focused {
+.searchapp input:focus,
+.searchapp .sui-select__control--is-focused {
   border: 1px solid @wm-light-blue !important;
 }
 
-.searchapp-wise .sui-select__value-container--has-value {
+.searchapp .sui-select__value-container--has-value {
   font-family: @wm-ff1 !important;
 }
 
@@ -366,7 +366,7 @@ body.searchlib-page {
   margin-top: 20px !important;
 }
 
-.searchapp-wise .sui-paging-info {
+.searchapp .sui-paging-info {
   margin-top: 1em !important;
 }
 
@@ -409,12 +409,12 @@ div.filter-list {
 
 /* Pagination  */
 
-.searchapp-wise .sui-paging {
+.searchapp .sui-paging {
   margin-bottom: 0;
 }
 
-.searchapp-wise .rc-pagination-item-active,
-.searchapp-wise .rc-pagination-item-active:hover {
+.searchapp .rc-pagination-item-active,
+.searchapp .rc-pagination-item-active:hover {
   background-color: @wm-dark-blue2;
   color: #fff !important;
 }
@@ -427,7 +427,7 @@ div#page-document
   color: #fff !important;
 }
 
-.searchapp-wise .sui-select__control {
+.searchapp .sui-select__control {
   background-color: transparent;
 }
 
@@ -444,53 +444,53 @@ div#page-document
   color: @wm-light-gray2 !important;
 }
 
-#search-app .searchapp-wise .simple-item-link {
+#search-app .searchapp .simple-item-link {
   padding-left: 5px;
   color: @wm-light-blue2 !important;
   font-family: @wm-ff1 !important;
 }
 
-.searchapp-wise .extra .simple-item-label {
+.searchapp .extra .simple-item-label {
   font-family: @wm-ff1 !important;
 }
 
-.searchapp-wise .extra .simple-item-extra:not(:last-child) {
+.searchapp .extra .simple-item-extra:not(:last-child) {
   border-bottom: 1px solid @wm-light-gray3;
 }
 
-.searchapp-wise .extra .simple-item-extra {
+.searchapp .extra .simple-item-extra {
   width: 100%;
   padding: 0px;
   font-size: 14px;
 }
 
-.searchapp-wise .descriptor-item .array-string-item {
+.searchapp .descriptor-item .array-string-item {
   padding-right: 0 !important;
 }
 
 /* Results 'Table' view */
 
-.searchapp-wise .ui.celled.table {
+.searchapp .ui.celled.table {
   border-radius: 0 !important;
 }
 
-.searchapp-wise .ui.celled.table tr th {
+.searchapp .ui.celled.table tr th {
   font-family: @wm-ff2 !important;
   font-size: 14px;
   font-weight: 500 !important;
 }
 
-.searchapp-wise .ui.celled.table tr td h4 {
+.searchapp .ui.celled.table tr td h4 {
   font-size: 14px;
 }
 
-.searchapp-wise .ui.celled.table tr td {
+.searchapp .ui.celled.table tr td {
   border-bottom: none !important;
   font-size: 14px;
 }
 
-.searchapp-wise .ui.celled.table tr th,
-.searchapp-wise .ui.celled.table tr td {
+.searchapp .ui.celled.table tr th,
+.searchapp .ui.celled.table tr td {
   border-right: none !important;
 }
 
