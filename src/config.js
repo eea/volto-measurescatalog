@@ -168,10 +168,11 @@ export const wise_minimal_config = {
   elastic_index: 'wise_catalogue_measures',
   enableNLP: false,
   layoutComponent: 'WiseLayoutCharts',
+  facetsListComponent: 'DefaultFacetsList',
+  searchBoxInputComponent: 'SimpleSearchInput',
   wiseSearchPath: '/catalogue',
 
   permanentFilters: [],
-
   facets: [],
   highlight: {
     queryParams: {
@@ -191,10 +192,12 @@ export const wise_minimal_config = {
       direction: 'asc',
     },
   ],
-  tableViewParams: {},
+
   initialView: {
     factory: 'ChartsIntro',
   },
+
+  tableViewParams: {},
   listingViewParams: {},
 
   download_fields: [],
@@ -202,7 +205,6 @@ export const wise_minimal_config = {
   resultItemModel: {
     factory: 'ResultModelExtended',
   },
-
 };
 
 export const wise_config = {

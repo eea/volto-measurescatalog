@@ -5,7 +5,7 @@ import '../less/public.less';
 const RightColumnLayout = (props) => {
   const { bodyContent } = props;
   return (
-    <div id="search-app">
+    <div id="search-app" className="charts-layout">
       <Grid columns={1} stackable className="body-content">
         <Grid.Row>
           <Grid.Column
