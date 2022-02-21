@@ -1,7 +1,8 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 // import '../less/custom.less';
-import '../less/public.less';
+import '../less/base.less';
+import '../less/wise.less';
 
 const RightColumnLayout = (props) => {
   const { bodyContent, bodyFooter, bodyHeader, header, sideContent } = props;
