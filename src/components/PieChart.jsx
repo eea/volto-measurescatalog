@@ -43,13 +43,20 @@ export const PieChart = ({ data, field, ...rest }) => {
           const getUrl = window.location;
           const baseUrl = getUrl.protocol + '//' + getUrl.host;
           const newUrl =
-            baseUrl + appConfig.wiseSearchPath + '?' +
-            "size=n_10_n&" +
-            encodeURIComponent("filters[0][field]") + "=" +
-            encodeURIComponent(field) + "&" +
-            encodeURIComponent("filters[0][values][0]") + "=" +
-            encodeURIComponent(node.id) + "&" +
-            encodeURIComponent("filters[0][type]") + "=any";
+            baseUrl +
+            appConfig.wiseSearchPath +
+            '?' +
+            'size=n_10_n&' +
+            encodeURIComponent('filters[0][field]') +
+            '=' +
+            encodeURIComponent(field) +
+            '&' +
+            encodeURIComponent('filters[0][values][0]') +
+            '=' +
+            encodeURIComponent(node.id) +
+            '&' +
+            encodeURIComponent('filters[0][type]') +
+            '=any';
           window.location.replace(newUrl);
         } else {
           // console.log('Unknown field.');
