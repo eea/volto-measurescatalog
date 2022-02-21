@@ -1,6 +1,7 @@
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
 import { useAppConfig } from '@eeacms/search';
+import { encodeFilters } from './utils';
 
 export const PieChart = ({ data, field, ...rest }) => {
   let searchOnClick = false;
@@ -36,18 +37,7 @@ export const PieChart = ({ data, field, ...rest }) => {
           const newUrl =
             baseUrl +
             appConfig.wiseSearchPath +
-            '?' +
-            'size=n_10_n&' +
-            encodeURIComponent('filters[0][field]') +
-            '=' +
-            encodeURIComponent(field) +
-            '&' +
-            encodeURIComponent('filters[0][values][0]') +
-            '=' +
-            encodeURIComponent(node.id) +
-            '&' +
-            encodeURIComponent('filters[0][type]') +
-            '=any';
+            encodeFilters([[field, node.id, 'any']]);
           window.location.replace(newUrl);
         } else {
           // console.log('Unknown field.');

@@ -3,6 +3,7 @@
 import React from 'react';
 import { ResponsiveBar } from '@nivo/bar';
 import { useAppConfig } from '@eeacms/search';
+import { encodeFilters } from './utils';
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
@@ -44,28 +45,10 @@ export const BarChart = ({
           const newUrl =
             baseUrl +
             appConfig.wiseSearchPath +
-            '?' +
-            'size=n_10_n&' +
-            encodeURIComponent('filters[0][field]') +
-            '=' +
-            encodeURIComponent(fieldX) +
-            '&' +
-            encodeURIComponent('filters[0][values][0]') +
-            '=' +
-            encodeURIComponent(node.data.Descriptor) +
-            '&' +
-            encodeURIComponent('filters[0][type]') +
-            '=any&' +
-            encodeURIComponent('filters[1][field]') +
-            '=' +
-            encodeURIComponent(fieldY) +
-            '&' +
-            encodeURIComponent('filters[1][values][0]') +
-            '=' +
-            encodeURIComponent(node.id) +
-            '&' +
-            encodeURIComponent('filters[1][type]') +
-            '=any';
+            encodeFilters([
+              [fieldX, node.data.Descriptor, 'any'],
+              [fieldY, node.id, 'any'],
+            ]);
           window.location.replace(newUrl);
         } else {
           // console.log("Not set.");
