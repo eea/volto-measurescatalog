@@ -4,7 +4,6 @@ import { PieChart } from './PieChart';
 import { BarChart } from './BarChart';
 import { Grid, Table } from 'semantic-ui-react'; // , Segment
 import { Button } from 'semantic-ui-react';
-import { useSearchContext } from '@eeacms/search/lib/hocs';
 
 // const getPercentage = (value, total) => {
 //   return (value * 100) / total;
@@ -201,7 +200,6 @@ const ChartsIntro = (props) => {
   // console.log('measureData', measureData, chartData);
   // console.log('all', chartData);
   // console.log('barData', barData);
-  const { setSearchTerm } = useSearchContext();
 
   return (
     <div className="charts-intro-page">
@@ -211,7 +209,10 @@ const ChartsIntro = (props) => {
           basic
           onClick={(evt) => {
             evt.preventDefault();
-            setSearchTerm('""', { shouldClearFilters: false });
+            const getUrl = window.location;
+            const baseUrl = getUrl.protocol + '//' + getUrl.host;
+            const newUrl = baseUrl + appConfig.wiseSearchPath;
+            window.location.replace(newUrl);
           }}
         >
           Browse Catalog
