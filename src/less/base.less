@@ -223,7 +223,8 @@ body.searchlib-page {
 
             .title {
               padding-left: 0.5em;
-              background: @wm-light-gray3;
+              border-top: 1px solid @wm-light-gray;
+              background: white;
               color: @wm-dark-blue3 !important;
               font-family: @wm-ff2 !important;
               font-size: 16px;
@@ -238,8 +239,12 @@ body.searchlib-page {
               }
 
               &:hover {
-                color: @wm-light-gray2 !important;
+                background: @wm-light-gray;
               }
+            }
+
+            fieldset {
+              margin-bottom: 25px;
             }
           }
 
