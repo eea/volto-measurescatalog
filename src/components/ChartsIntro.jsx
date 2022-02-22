@@ -3,7 +3,6 @@ import { runRequest } from '@eeacms/search';
 import { PieChart } from './PieChart';
 import { BarChart } from './BarChart';
 import { Grid, Table } from 'semantic-ui-react'; // , Segment
-import { Button } from 'semantic-ui-react';
 
 // const getPercentage = (value, total) => {
 //   return (value * 100) / total;
@@ -203,21 +202,6 @@ const ChartsIntro = (props) => {
 
   return (
     <div className="charts-intro-page">
-      <div className="browse-catalog">
-        <Button
-          as="a"
-          basic
-          onClick={(evt) => {
-            evt.preventDefault();
-            const getUrl = window.location;
-            const baseUrl = getUrl.protocol + '//' + getUrl.host;
-            const newUrl = baseUrl + appConfig.wiseSearchPath;
-            window.location.replace(newUrl);
-          }}
-        >
-          Browse Catalog
-        </Button>
-      </div>
       {chartData ? (
         <>
           <div id="content-text-target" ref={targetNode}>
