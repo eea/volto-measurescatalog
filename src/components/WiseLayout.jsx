@@ -20,7 +20,7 @@ const RightColumnLayout = (props) => {
         <Grid.Row>
           <Grid.Column
             widescreen="9"
-            tablet="9"
+            tablet="8"
             computer="9"
             className="col-left"
           >
@@ -28,7 +28,7 @@ const RightColumnLayout = (props) => {
           </Grid.Column>
           <Grid.Column
             widescreen="3"
-            tablet="3"
+            tablet="4"
             computer="3"
             className="col-right"
           >
