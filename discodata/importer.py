@@ -8,40 +8,42 @@ import json
 import requests
 
 sql_views = {
+    # default nrOfHits is set to 100 when copy-pasting from discodata.eea.europa.eu
+    # manually set to 1000000, larger enough for 4618 (or 4641) items in master_data
     'vw_master_BD_2013_2018':
         'https://discodata.eea.europa.eu/sql?query=' \
         'Select%20*%20from%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.' \
-        'vw_master_BD_2013_2018&p=1&nrOfHits=100&mail=null&schema=null',
+        'vw_master_BD_2013_2018&p=1&nrOfHits=1000000&mail=null&schema=null',
     'vw_master_HD_Habitats_2013_2018_Filtered':
         'https://discodata.eea.europa.eu/sql?query=' \
         'Select%20*%20from%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.' \
-        'vw_master_HD_Habitats_2013_2018_Filtered%0A&p=1&nrOfHits=100&mail=null' \
+        'vw_master_HD_Habitats_2013_2018_Filtered%0A&p=1&nrOfHits=1000000&mail=null' \
         '&schema=null',
     'vw_master_HD_Species_2013_2018_Filtered':
         'https://discodata.eea.europa.eu/sql?query=' \
         'Select%20*%20from%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.' \
-        'vw_master_HD_Species_2013_2018_Filtered%0A&p=1&nrOfHits=100&mail=null&' \
+        'vw_master_HD_Species_2013_2018_Filtered%0A&p=1&nrOfHits=1000000&mail=null&' \
         'schema=null',
     'vw_master_MSFD_Filtered':
         'https://discodata.eea.europa.eu/sql?query=' \
         'Select%20*%20from%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.'\
-        'vw_master_MSFD_Filtered%0A&p=1&nrOfHits=100&mail=null&schema=null',
+        'vw_master_MSFD_Filtered%0A&p=1&nrOfHits=1000000&mail=null&schema=null',
     'vw_master_MSPD':
         'https://discodata.eea.europa.eu/sql?query=' \
         'Select%20*%20from%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.' \
-        'vw_master_MSPD%0A&p=1&nrOfHits=100&mail=null&schema=null',
+        'vw_master_MSPD%0A&p=1&nrOfHits=1000000&mail=null&schema=null',
     'vw_master_Sectorial':
         'https://discodata.eea.europa.eu/sql?query=' \
         'Select%20*%20from%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.' \
-        'vw_master_Sectorial%0A&p=1&nrOfHits=100&mail=null&schema=null',
+        'vw_master_Sectorial%0A&p=1&nrOfHits=1000000&mail=null&schema=null',
     'vw_master_WFD_Filtered':
         'https://discodata.eea.europa.eu/sql?query=' \
         'Select%20*%20from%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.' \
-        'vw_master_WFD_Filtered%0A&p=1&nrOfHits=100&mail=null&schema=null',
+        'vw_master_WFD_Filtered%0A&p=1&nrOfHits=1000000&mail=null&schema=null',
     'vw_master':
         'https://discodata.eea.europa.eu/sql?query=' \
         'Select%20*%20from%20%5BWISE_ShippingsPorts_Measures%5D.' \
-        '%5Blatest%5D.vw_master%0A&p=1&nrOfHits=100&mail=null&schema=null',
+        '%5Blatest%5D.vw_master%0A&p=1&nrOfHits=1000000&mail=null&schema=null',
 }
 
 fields = {
