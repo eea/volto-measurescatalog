@@ -270,25 +270,6 @@ def get_data(url):
     return data
 
 def import_from_discodata():
-    # SQL Views
-    # [vw_master_BD_2013_2018]
-    # [vw_master_HD_Habitats_2013_2018_Filtered]
-    # [vw_master_HD_Species_2013_2018_Filtered]
-    # [vw_master_MSFD_Filtered]
-    # [vw_master_MSPD]
-    # [vw_master_Sectorial]
-    # [vw_master_WFD_Filtered]
-    # [vw_master]
-
-    # OK Select * from [WISE_ShippingsPorts_Measures].[latest].vw_master_BD_2013_2018
-    # ?? Select * from [WISE_ShippingsPorts_Measures].[latest].vw_master_HD_Habitats_2013_2018_Filtered
-    # ?? Select * from [WISE_ShippingsPorts_Measures].[latest].vw_master_HD_Species_2013_2018_Filtered
-    # OK Select * from [WISE_ShippingsPorts_Measures].[latest].vw_master_MSFD_Filtered
-    # OK Select * from [WISE_ShippingsPorts_Measures].[latest].vw_master_MSPD
-    # ?? Select * from [WISE_ShippingsPorts_Measures].[latest].vw_master_Sectorial
-    # OK Select * from [WISE_ShippingsPorts_Measures].[latest].vw_master_WFD_Filtered
-    # ?? Select * from [WISE_ShippingsPorts_Measures].[latest].vw_master
-
     sql_views = {
         'vw_master_BD_2013_2018': 'https://discodata.eea.europa.eu/sql?query=Select%20*%20from%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.vw_master_BD_2013_2018&p=1&nrOfHits=100&mail=null&schema=null',
         'vw_master_HD_Habitats_2013_2018_Filtered': 'https://discodata.eea.europa.eu/sql?query=Select%20*%20from%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.vw_master_HD_Habitats_2013_2018_Filtered%0A&p=1&nrOfHits=100&mail=null&schema=null',
@@ -314,113 +295,6 @@ def import_from_discodata():
         x = get_data(sql_views[sql_view])
 
     print("WIP DONE")
-
-    """
-        vw_master_BD_2013_2018
-            catalogueCode
-            sector
-            useOrActivity
-            measureName
-            status
-            measureOrigin
-            measureNature
-            waterBodyCategory
-            spatialScope
-            country
-            measureImpactTo
-            measureImpactToDetails
-            D1
-            D2
-            D3
-            D4
-            D5
-            D6
-            D7
-            D8
-            D9
-            D10
-            D11
-        vw_master_HD_Habitats_2013_2018_Filtered
-            TODO
-        vw_master_HD_Species_2013_2018_Filtered
-            TODO
-        vw_master_MSFD_Filtered
-            catalogueCode
-            sector
-            useOrActivity
-            measureName
-            status
-            measureOrigin
-            measureNature
-            waterBodyCategory
-            spatialScope
-            country
-            measureImpactTo
-            measureImpactToDetails
-            D1
-            D2
-            D3
-            D4
-            D5
-            D6
-            D7
-            D8
-            D9
-            D10
-            D11
-        vw_master_MSPD
-            catalogueCode
-            sector
-            useOrActivity
-            measureName
-            status
-            measureOrigin
-            measureNature
-            waterBodyCategory
-            spatialScope
-            country
-            measureImpactTo
-            measureImpactToDetails
-            D1
-            D2
-            D3
-            D4
-            D5
-            D6
-            D7
-            D8
-            D9
-            D10
-            D11
-        vw_master_Sectorial
-            TODO
-        vw_master_WFD_Filtered
-            catalogueCode
-            sector
-            useOrActivity
-            measureName
-            status
-            measureOrigin
-            measureNature
-            waterBodyCategory
-            spatialScope
-            country
-            measureImpactTo
-            measureImpactToDetails
-            D1
-            D2
-            D3
-            D4
-            D5
-            D6
-            D7
-            D8
-            D9
-            D10
-            D11
-        vw_master
-            TODO
-    """
 
 if __name__ == "__main__":
     # main()
@@ -514,4 +388,242 @@ if __name__ == "__main__":
                     'TOTAL_impacts': '0',
                     '_id': 'BD1924'
                 }
+    """
+
+
+    """
+NEW
+    vw_master_BD_2013_2018
+---------------------------------------------------------
+{
+    "results": [
+        {
+            "D1": 1,
+            "D10": 0,
+            "D11": 0,
+            "D2": 0,
+            "D3": 0,
+            "D4": 0,
+            "D5": 1,
+            "D6": 1,
+            "D7": 0,
+            "D8": 1,
+            "D9": 1,
+            "catalogueCode": "BD01",
+            "country": "Germany",
+            "measureImpactTo": "Birds",
+            "measureImpactToDetails": "Gavia stellata",
+            "measureName": "Other measures to reduce impacts from marine aquaculture infrastructures and operation",
+            "measureNature": "not specified",
+            "measureOrigin": "BD (Directive 79/409/EEC)",
+            "sector": "Ports and traffic",
+            "spatialScope": "Not specified",
+            "status": "Taken",
+            "useOrActivity": "Not specified",
+            "waterBodyCategory": "Not specified"
+        },
+
+vw_master_HD_Habitats_2013_2018_Filtered
+---------------------------------------------------------
+{
+    "results": [
+        {
+            "D1": 1,
+            "D10": 0,
+            "D11": 0,
+            "D2": 0,
+            "D3": 0,
+            "D4": 0,
+            "D5": 0,
+            "D6": 1,
+            "D7": 1,
+            "D8": 0,
+            "D9": 0,
+            "catalogueCode": "HDH01",
+            "country": "Belgium",
+            "measureImpactTo": "Habitats",
+            "measureImpactToDetails": "Sandbanks which are slightly covered by sea water all the time",
+            "measureName": "Adapt/manage extraction of non-energy resources",
+            "measureNature": "not specified",
+            "measureOrigin": "HD (Directive 92/43/EEC)",
+            "sector": "Ports and traffic",
+            "spatialScope": "Not specified",
+            "status": "Taken",
+            "useOrActivity": "Not specified",
+            "waterBodyCategory": "Coastal and open sea"
+        },
+vw_master_HD_Species_2013_2018_Filtered
+---------------------------------------------------------
+{
+    "results": [
+        {
+            "D1": 1,
+            "D10": 0,
+            "D11": 0,
+            "D2": 0,
+            "D3": 0,
+            "D4": 0,
+            "D5": 1,
+            "D6": 1,
+            "D7": 0,
+            "D8": 1,
+            "D9": 1,
+            "catalogueCode": "HDSP01",
+            "country": "Germany",
+            "measureImpactTo": "Species",
+            "measureImpactToDetails": "Phocoena phocoena",
+            "measureName": "Other measures to reduce impacts from marine aquaculture infrastructures and operation",
+            "measureNature": "not specified",
+            "measureOrigin": "HD (Directive 92/43/EEC)",
+            "sector": "Ports and traffic",
+            "spatialScope": "Not specified",
+            "status": "Taken",
+            "useOrActivity": "Not specified",
+            "waterBodyCategory": "Not specified"
+        },
+vw_master_MSFD_Filtered
+---------------------------------------------------------
+{
+    "results": [
+        {
+            "D1": 0,
+            "D10": 0,
+            "D11": 0,
+            "D2": 0,
+            "D3": 0,
+            "D4": 0,
+            "D5": 0,
+            "D6": 0,
+            "D7": 0,
+            "D8": 1,
+            "D9": 0,
+            "catalogueCode": "MSFD01",
+            "country": "Belgium",
+            "measureImpactTo": "Not specified",
+            "measureImpactToDetails": null,
+            "measureName": "The dumping of dredged material at sea must meet the sediments quality criteria",
+            "measureNature": "administrative",
+            "measureOrigin": "MSFD (Directive 2008/56/EC)",
+            "sector": "Ports",
+            "spatialScope": "Not specified",
+            "status": "Adopted and Implemented 1a",
+            "useOrActivity": "Not specified",
+            "waterBodyCategory": "Not specified"
+        },
+vw_master_MSPD
+---------------------------------------------------------
+{
+    "results": [
+        {
+            "D1": 0,
+            "D10": 1,
+            "D11": 1,
+            "D2": 1,
+            "D3": 0,
+            "D4": 0,
+            "D5": 0,
+            "D6": 1,
+            "D7": 1,
+            "D8": 0,
+            "D9": 0,
+            "catalogueCode": "MSPD01",
+            "country": "Belgium",
+            "measureImpactTo": "Not specified",
+            "measureImpactToDetails": null,
+            "measureName": "Measuring poles and instruments are recognized as important for safe shipping.\n\nSafety objectives: safety of shipping, objectives for protection against the sea and for defence were defined.\n\nShipping is allowed everywhere in the Belgian sea areas barring different provisions that set up a ban or impose certain conditions.\n\nShipping International Maritime Organisation traffic separation scheme coordinates were given in the plan. In these areas, other activities may be allowed, insofar these do not structurally make impossible or limit shipping\n\nAreas to be avoided were defined as: a routing system within an established zone in which shipping is extremely dangerous\n\nPrecautionary area were defined as: a routeing system within a designated zone where ships must navigate with special precaution and in which a direction for the shipping traffic can be recommended.\n\nShipping intensities based upon AIS data (for the month of September 2012), with indication of the locations for which intensities are available were used.\n\nThere are zones designated for the potential expansion of the ports of Ostend and Zeebrugge Insofar reconcilable with the current port development or a future expansion of the ports concerned, other activities or developments may be allowed.",
+            "measureNature": "not specified",
+            "measureOrigin": "MSPD (Directive 2008/56/EC)",
+            "sector": null,
+            "spatialScope": "National",
+            "status": "Not specified",
+            "useOrActivity": null,
+            "waterBodyCategory": "Not specified"
+        },
+vw_master_Sectorial
+---------------------------------------------------------
+{
+    "results": [
+        {
+            "D1": 0,
+            "D10": 0,
+            "D11": 0,
+            "D2": 0,
+            "D3": 0,
+            "D4": 0,
+            "D5": 0,
+            "D6": 0,
+            "D7": 0,
+            "D8": 1,
+            "D9": 0,
+            "catalogueCode": "SEC01",
+            "country": "Not specified",
+            "measureImpactTo": "Not specified",
+            "measureImpactToDetails": null,
+            "measureName": "Use of hydrogen as fuel",
+            "measureNature": "technical measure",
+            "measureOrigin": "Sectorial",
+            "sector": "Traffic",
+            "spatialScope": "Not specified",
+            "status": "Not specified",
+            "useOrActivity": "Not specified",
+            "waterBodyCategory": "Not specified"
+        },
+vw_master_WFD_Filtered
+---------------------------------------------------------
+{
+    "results": [
+        {
+            "D1": 1,
+            "D10": 0,
+            "D11": 0,
+            "D2": 0,
+            "D3": 0,
+            "D4": 0,
+            "D5": 0,
+            "D6": 1,
+            "D7": 1,
+            "D8": 1,
+            "D9": 0,
+            "catalogueCode": "WFD01",
+            "country": "Portugal",
+            "measureImpactTo": "Habitats",
+            "measureImpactToDetails": null,
+            "measureName": "Monitoring, assessment and information before, during and after project\nNo dredging in specific periods:\nseasonal or tidal restrictions \nNo dredging of heavily contaminated sediments \nEnvironment impact assessment Selection of dredging equipment \nDredging Management Plans",
+            "measureNature": "legislation/regulation",
+            "measureOrigin": "WFD (Directive 2000/60/EC)",
+            "sector": "Traffic",
+            "spatialScope": "National",
+            "status": "Not specified",
+            "useOrActivity": "Navigation dredging",
+            "waterBodyCategory": "Coastal"
+        },
+vw_master
+---------------------------------------------------------
+{
+    "results": [
+        {
+            "D1": 1,
+            "D10": 0,
+            "D11": 0,
+            "D2": 0,
+            "D3": 0,
+            "D4": 0,
+            "D5": 1,
+            "D6": 1,
+            "D7": 0,
+            "D8": 1,
+            "D9": 1,
+            "catalogueCode": "BD01",
+            "country": "Germany",
+            "measureImpactTo": "Birds",
+            "measureImpactToDetails": "Gavia stellata",
+            "measureName": "Other measures to reduce impacts from marine aquaculture infrastructures and operation",
+            "measureNature": "not specified",
+            "measureOrigin": "BD (Directive 79/409/EEC)",
+            "sector": "Ports and traffic",
+            "spatialScope": "Not specified",
+            "status": "Taken",
+            "useOrActivity": "Not specified",
+            "waterBodyCategory": "Not specified"
+        },
     """
