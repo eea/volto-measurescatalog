@@ -70,7 +70,6 @@ fields = {
     'D9': 'D9',
     'D10': 'D10',
     'D11': 'D11',
-    # ? missing id? Example '_id': 'WFD11'
 }
 
 def get_id(rec):
@@ -115,7 +114,7 @@ def adapt_fields(data):
     res = []
     for item in data:
         adapted = {}
-        for field in item.keys():
+        for field in item:
             adapted[adapt_field(field)] = item[field]
         adapted['_id'] = get_id(item)
         res.append(adapted)
