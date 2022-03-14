@@ -71,6 +71,19 @@ fields = {
     # ? missing id? Example '_id': 'WFD11'
 }
 
+def get_id(rec):
+    """ Return ID for given record item
+    """
+    possible_fields = [
+        'MeasureCode', 'CodeCatalogue', 'catalogueCode'
+    ]
+
+    for field in possible_fields:
+        if rec.get(field):
+            return rec[field]
+
+    return None
+
 def nice_print(data):
     """ Nice print of json data, useful for debugging
     """
@@ -90,7 +103,7 @@ def get_data(url):
 def adapt_field(field):
     """ Convert sql field name to application field
     """
-    if field in fields.keys():
+    if field in fields:
         return fields[field]
     return field
 
@@ -102,6 +115,7 @@ def adapt_fields(data):
         adapted = {}
         for field in item.keys():
             adapted[adapt_field(field)] = item[field]
+        adapted['_id'] = get_id(item)
         res.append(adapted)
     return res
 
@@ -111,8 +125,8 @@ def import_from_discodata():
     vw_master = get_data(sql_views['vw_master'])
     master_data = adapt_fields(vw_master)
 
-    # nice_print(master_data)
-    # import pdb; pdb.set_trace()
+    nice_print(master_data)
+    import pdb; pdb.set_trace()
 
     # for sql_view in sql_views.items():
     #     url = sql_view[1]
