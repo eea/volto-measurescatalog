@@ -136,10 +136,10 @@ def get_details_data():
     res = {}
     for view, app_view in sql_details_views.items():
         if app_view not in res:
-            res[app_view] = []
-        data = get_data(sql_views[view])
+            res[app_view] = {}
+        data = adapt_fields(get_data(sql_views[view]))
         for item in data:
-            res[app_view].append(item)
+            res[app_view][item['_id']] = item
     return res
 
 def import_from_discodata():
@@ -151,13 +151,8 @@ def import_from_discodata():
     data = get_details_data()
 
     # nice_print(master_data)
-    nice_print(data)
-    import pdb; pdb.set_trace()
-
-    # for sql_view in sql_views.items():
-    #     url = sql_view[1]
-    #     response = len(get_data(url)['results'])
-    #     print(response)
+    # nice_print(data)
+    # import pdb; pdb.set_trace()
 
 if __name__ == "__main__":
     import_from_discodata()

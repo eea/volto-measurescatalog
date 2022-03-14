@@ -192,70 +192,69 @@ def main():
     master_data = read_master_csv_files('./csv')
 
     data = read_details_csv_files('./csv')
-    import pdb; pdb.set_trace()
 
-    # for (i, main) in enumerate(master_data):
-    #     measure_name = main[OM]
-    #     rec = data[measure_name][main['_id']]
-    #
-    #     keys = main.keys()
-    #     for k, v in rec.items():
-    #         # uses the key from master record
-    #         for mk in keys:
-    #             if k.lower().strip() == mk.lower().strip():
-    #                 k = mk
-    #         k = remap(k)
-    #         if k in main \
-    #                 and main[k] \
-    #                 and main[k].lower() != v.lower():
-    #             print(
-    #                 f"Data conflict at position: : {i} ({main['_id']})")
-    #             print(f"Key: {k}. Conflicting sheet: {measure_name}.")
-    #             print(f"Master value: <{main[k]}>. Sheet value: <{v}>")
-    #             print("")
-    #         else:
-    #             main[k] = v
-    #
-    #     fix_descriptor(main)
-    #     fix_impacts(main)
-    #     fix_keywords(main)
-    #     fix_region(main)
-    #     # fix_fieldnames(main)
-    #
-    #     _id = get_id(main)
-    #     main['_id'] = _id
-    #     main['_index'] = index
-    #
-    # ids = set([rec['_id'] for rec in master_data])
-    # print(f"Unique records: {len(ids)}")
-    #
-    # resp = conn.indices.create(
-    #     index,
-    #     body={
-    #         "mappings": {
-    #             "properties": make_mappings(master_data)
-    #         }
-    #
-    #     })
-    # assert resp.get('acknowledged') is True
-    #
-    # body = []
-    # for doc in master_data:
-    #     body.append(json.dumps({"create": doc}))
-    #
-    # print(f"Indexing {len(master_data)} documents")
-    # num_docs = len(master_data)
-    # progress = tqdm.tqdm(unit="docs", total=num_docs)
-    #
-    # successes = 0
-    #
-    # for ok, action in streaming_bulk(
-    #     client=conn, index=index, actions=iter(master_data),
-    # ):
-    #     progress.update(1)
-    #     successes += ok
-    #
-    # print("Indexed %d/%d documents" % (successes, num_docs))
+    for (i, main) in enumerate(master_data):
+        measure_name = main[OM]
+        rec = data[measure_name][main['_id']]
+
+        keys = main.keys()
+        for k, v in rec.items():
+            # uses the key from master record
+            for mk in keys:
+                if k.lower().strip() == mk.lower().strip():
+                    k = mk
+            k = remap(k)
+            if k in main \
+                    and main[k] \
+                    and main[k].lower() != v.lower():
+                print(
+                    f"Data conflict at position: : {i} ({main['_id']})")
+                print(f"Key: {k}. Conflicting sheet: {measure_name}.")
+                print(f"Master value: <{main[k]}>. Sheet value: <{v}>")
+                print("")
+            else:
+                main[k] = v
+
+        fix_descriptor(main)
+        fix_impacts(main)
+        fix_keywords(main)
+        fix_region(main)
+        # fix_fieldnames(main)
+
+        _id = get_id(main)
+        main['_id'] = _id
+        main['_index'] = index
+
+    ids = set([rec['_id'] for rec in master_data])
+    print(f"Unique records: {len(ids)}")
+
+    resp = conn.indices.create(
+        index,
+        body={
+            "mappings": {
+                "properties": make_mappings(master_data)
+            }
+
+        })
+    assert resp.get('acknowledged') is True
+
+    body = []
+    for doc in master_data:
+        body.append(json.dumps({"create": doc}))
+
+    print(f"Indexing {len(master_data)} documents")
+    num_docs = len(master_data)
+    progress = tqdm.tqdm(unit="docs", total=num_docs)
+
+    successes = 0
+
+    for ok, action in streaming_bulk(
+        client=conn, index=index, actions=iter(master_data),
+    ):
+        progress.update(1)
+        successes += ok
+
+    print("Indexed %d/%d documents" % (successes, num_docs))
 
 
 if __name__ == "__main__":
