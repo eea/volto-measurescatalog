@@ -46,6 +46,16 @@ sql_views = {
         '%5Blatest%5D.vw_master%0A&p=1&nrOfHits=1000000&mail=null&schema=null',
 }
 
+sql_details_views = {
+    'vw_master_BD_2013_2018': 'BD (Directive 79/409/EEC)',
+    'vw_master_HD_Habitats_2013_2018_Filtered': 'HD (Directive 92/43/EEC)', # ??
+    'vw_master_HD_Species_2013_2018_Filtered': 'HD (Directive 92/43/EEC)',  # ??
+    'vw_master_MSFD_Filtered': 'MSFD (Directive 2008/56/EC)',
+    'vw_master_MSPD': 'MSPD (Directive 2008/56/EC)',
+    'vw_master_Sectorial': 'Sectorial',
+    'vw_master_WFD_Filtered': 'WFD (Directive 2000/60/EC)',
+}
+
 fields = {
     'catalogueCode': 'CodeCatalogue',
     'sector': 'Sector',
@@ -120,13 +130,28 @@ def adapt_fields(data):
         res.append(adapted)
     return res
 
+def get_details_data():
+    """ Get data from sql_views other than master
+    """
+    res = {}
+    for view, app_view in sql_details_views.items():
+        if app_view not in res:
+            res[app_view] = []
+        data = get_data(sql_views[view])
+        for item in data:
+            res[app_view].append(item)
+    return res
+
 def import_from_discodata():
     """ Get data from discodata
     """
     vw_master = get_data(sql_views['vw_master'])
     master_data = adapt_fields(vw_master)
 
-    nice_print(master_data)
+    data = get_details_data()
+
+    # nice_print(master_data)
+    nice_print(data)
     import pdb; pdb.set_trace()
 
     # for sql_view in sql_views.items():
