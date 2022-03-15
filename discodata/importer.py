@@ -341,6 +341,6 @@ def import_from_discodata():
         successes += ok
 
     print("Indexed %d/%d documents" % (successes, num_docs))
-    __import__('pdb').set_trace()
+
 if __name__ == "__main__":
     import_from_discodata()
