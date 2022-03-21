@@ -279,13 +279,13 @@ app_fields = {
     'categories': '',
     'countryCode': '',
     'descriptorsItLinksTo': '',
-    'ecologicalImpact': '',
+    'ecologicalImpact': 'Ecological impacts',
     'existingPoliciesLink': 'Link to existing policies',
     'featureCode': '',
     'futureExpectations': '',
     'futureScenarios': '',
     'generalView': '',
-    'hydromorphologyEffect': '',
+    'hydromorphologyEffect': 'Effect on hydromorphology',
     'implementationStatus': '',
     'keywords': '',
     # 'keywords': 'Keywords', ??
@@ -303,7 +303,7 @@ app_fields = {
     'measureStatusId': '',
     'objective': '',
     'otherSpatialScope': 'MSFD Spatial scope',
-    'physicalModificationNature': '',
+    'physicalModificationNature': 'Nature of physical modification',
     'ports': '',
     'precautionaryAreas': '',
     'pressureCode': '',
@@ -328,11 +328,6 @@ app_fields = {
 # Sectorial ----
 # Impacts ??
 # Spatial scale ??
-#
-# WFD ----
-# Nature of physical modification
-# Effect on hydromorphology
-# Ecological impacts
 #
 # MSPD ----
 # Nature of physical modification
