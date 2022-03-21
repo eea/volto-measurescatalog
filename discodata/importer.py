@@ -62,6 +62,191 @@ sql_details_views = {
     'vw_master_WFD_Filtered': 'WFD (Directive 2000/60/EC)',
 }
 
+sql_further_information_views = {
+    'BD_2013_2018': 'BD (Directive 79/409/EEC)',
+    'HD_Habitats_2013_2018_Filtered': 'HD (Directive 92/43/EEC)', # ??
+    'HD_Species_2013_2018_Filtered': 'HD (Directive 92/43/EEC)',  # ??
+    'MSFD_Filtered': 'MSFD (Directive 2008/56/EC)',
+    'MSPD': 'MSPD (Directive 2008/56/EC)',
+    'Sectorial': 'Sectorial',
+    'WFD_Filtered': 'WFD (Directive 2000/60/EC)',
+}
+
+sql_views_more = {
+    'BD_2013_2018': {
+        'url': 'https://discodata.eea.europa.eu/sql?query=SELECT%20*%20FROM%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.%5BBD_2013_2018%5D&p=1&nrOfHits=1000000&mail=null&schema=null',
+        'fields': [
+            'catalogueCode',
+            'sectorId',
+            'useOrActivityId',
+            'countryCode',
+            'waterBodyCategoryId',
+            'measureStatusId',
+            'measureOriginId',
+            'measureNatureId',
+            'spatialScopeId',
+            'measureImpactToId',
+            'measureImpactToDetails',
+            'measureName',
+            'pressureCode',
+            'pressureName',
+            'pressureType',
+            'ranking',
+            'measureCode',
+            'recommendedMeasureTypeE02AndOrE03',
+            'measurePurpose',
+            'measureLocation',
+            'measureResponse',
+            'measureAdditionalInfo',
+            'season',
+            'featureCode',
+            'subUnit',
+        ]
+    },
+    'HD_Habitats_2013_2018_Filtered': {
+        'url': 'https://discodata.eea.europa.eu/sql?query=SELECT%20*%20FROM%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.%5BHD_Habitats_2013_2018_Filtered%5D&p=1&nrOfHits=1000000&mail=null&schema=null',
+        'fields': [
+            'catalogueCode',
+            'sectorId',
+            'useOrActivityId',
+            'countryCode',
+            'waterBodyCategoryId',
+            'measureName',
+            'measureStatusId',
+            'measureOriginId',
+            'measureNatureId',
+            'spatialScopeId',
+            'measureImpactToId',
+            'measureImpactToDetails',
+        ]
+    },
+    'HD_Species_2013_2018_Filtered': {
+        'url': 'https://discodata.eea.europa.eu/sql?query=SELECT%20*%20FROM%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.%5BHD_Species_2013_2018_Filtered%5D&p=1&nrOfHits=1000000&mail=null&schema=null',
+        'fields': [
+            'catalogueCode',
+            'countryCode',
+            'measureImpactToDetails',
+            'measureImpactToId',
+            'measureNatureId',
+            'measureOriginId',
+            'measureStatusId',
+            'sectorId',
+            'spatialScopeId',
+            'useOrActivityId',
+            'waterBodyCategoryId',
+            'measureName',
+            'featureCode',
+            'pressureCode',
+            'pressureName',
+            'pressureType',
+            'ranking',
+            'measureCode',
+            'recommendedMeasureTypeE02AndOrE03',
+            'measurePurpose',
+            'measureLocation',
+            'measureResponse',
+            'measureAdditionalInfo',
+        ]
+    },
+    'MSFD_Filtered': {
+        'url': 'https://discodata.eea.europa.eu/sql?query=SELECT%20*%20FROM%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.%5BMSFD_Filtered%5D&p=1&nrOfHits=1000000&mail=null&schema=null',
+        'fields': [
+            'catalogueCode',
+            'countryCode',
+            'measureName',
+            'useOrActivityId',
+            'measureImpactToId',
+            'waterBodyCategoryId',
+            'spatialScopeId',
+            'measureOriginId',
+            'measureNatureId',
+            'sectorId',
+            'measureStatusId',
+            'measureImpactToDetails',
+            'measureNumber',
+            'existingPoliciesLink',
+            'ktmLinkTo',
+            'relevantTargets',
+            'descriptorsItLinksTo',
+            'relevantFeaturesFromAnnexIII',
+            'otherSpatialScope',
+        ],
+    },
+    'MSPD': {
+        'url': 'https://discodata.eea.europa.eu/sql?query=SELECT%20*%20FROM%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.%5BMSPD%5D&p=1&nrOfHits=1000000&mail=null&schema=null',
+        'fields': [
+            'catalogueCode',
+            'countryCode',
+            'waterBodyCategoryId',
+            'measureStatusId',
+            'measureOriginId',
+            'measureNatureId',
+            'spatialScopeId',
+            'measureImpactToId',
+            'sectorId',
+            'useOrActivityId',
+            'measureImpactToDetails',
+            'measureName',
+            'implementationStatus',
+            'shippingTackled',
+            'trafficSeparationScheme',
+            'priority',
+            'approachingAreas',
+            'precautionaryAreas',
+            'areasToBeAvoided',
+            'futureScenarios',
+            'source',
+            'keywords',
+            'authority',
+            'generalView',
+            'ports',
+            'futureExpectations',
+            'safetyManner',
+            'objective',
+            'categories',
+        ]
+    },
+    'Sectorial': {
+        'url': 'https://discodata.eea.europa.eu/sql?query=SELECT%20*%20FROM%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.%5BSectorial%5D&p=1&nrOfHits=1000000&mail=null&schema=null',
+        'fields': [
+            'catalogueCode',
+            'countryCode',
+            'measureImpactToDetails',
+            'measureImpactToId',
+            'measureNatureId',
+            'measureOriginId',
+            'measureStatusId',
+            'sectorId',
+            'spatialScopeId',
+            'useOrActivityId',
+            'waterBodyCategoryId',
+            'measureName',
+            'source',
+        ]
+    },
+    'WFD_Filtered': {
+        'url': 'https://discodata.eea.europa.eu/sql?query=SELECT%20*%20FROM%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.%5BWFD_Filtered%5D&p=1&nrOfHits=1000000&mail=null&schema=null',
+        'fields': [
+            'catalogueCode',
+            'sectorId',
+            'useOrActivityId',
+            'physicalModificationNature',
+            'hydromorphologyEffect',
+            'ecologicalImpact',
+            'measureMitigationGEP',
+            'countryCode',
+            'waterBodyCategoryId',
+            'measureStatusId',
+            'measureOriginId',
+            'measureNatureId',
+            'spatialScopeId',
+            'measureImpactToId',
+            'measureImpactToDetails',
+        ]
+    }
+}
+
+
 app_fields = {
     'catalogueCode': 'CodeCatalogue',
     'sector': 'Sector',
@@ -261,6 +446,18 @@ def get_details_data():
             res[app_view][item['_id']] = item
     return res
 
+def get_further_information_data():
+    """ Get data to be listed in Further information fields
+    """
+    res = {}
+    for view, app_view in sql_further_information_views.items():
+        if app_view not in res:
+            res[app_view] = {}
+        data = adapt_fields_and_values(get_data(sql_views_more[view]['url']))
+        for item in data:
+            res[app_view][item['_id']] = item
+    return res
+
 def import_from_discodata():
     """ Get data from discodata
     """
@@ -278,10 +475,12 @@ def import_from_discodata():
     master_data = adapt_fields_and_values(vw_master)
 
     data = get_details_data()
+    further_information_data = get_further_information_data()
 
     for (i, main) in enumerate(master_data):
         measure_name = main[OM]
         rec = data[measure_name][main['_id']]
+        rec_further = further_information_data[measure_name][main['_id']]
 
         keys = main.keys()
         for key, value in rec.items():
