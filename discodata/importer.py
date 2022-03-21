@@ -280,7 +280,7 @@ app_fields = {
     'countryCode': '',
     'descriptorsItLinksTo': '',
     'ecologicalImpact': '',
-    'existingPoliciesLink': '',
+    'existingPoliciesLink': 'Link to existing policies',
     'featureCode': '',
     'futureExpectations': '',
     'futureScenarios': '',
@@ -288,7 +288,8 @@ app_fields = {
     'hydromorphologyEffect': '',
     'implementationStatus': '',
     'keywords': '',
-    'ktmLinkTo': '',
+    # 'keywords': 'Keywords', ??
+    'ktmLinkTo': 'KTMs it links to',
     'measureAdditionalInfo': 'Measure additional info',
     'measureCode': '',
     'measureImpactToId': '',
@@ -301,7 +302,7 @@ app_fields = {
     'measureResponse': 'Measure response',
     'measureStatusId': '',
     'objective': '',
-    'otherSpatialScope': '',
+    'otherSpatialScope': 'MSFD Spatial scope',
     'physicalModificationNature': '',
     'ports': '',
     'precautionaryAreas': '',
@@ -312,8 +313,8 @@ app_fields = {
     'ranking': 'Ranking',
     'recommendedMeasureTypeE02AndOrE03':
         'Measure type recommended to address E02 and/or E03',
-    'relevantFeaturesFromAnnexIII': '',
-    'relevantTargets': '',
+    'relevantFeaturesFromAnnexIII': 'Relevant features from MSFD Annex III',
+    'relevantTargets': 'Relevant targets',
     'safetyManner': '',
     'season': 'Season',
     'sectorId': '',
@@ -324,16 +325,6 @@ app_fields = {
     'trafficSeparationScheme': '',
     'useOrActivityId': '',
     'waterBodyCategoryId': '',
-
-
-# MSFD ----
-# Link to existing policies
-# KTMs it links to
-# Relevant targets
-# Relevant features from MSFD Annex III
-# MSFD Spatial scope
-# Keywords
-#
 # Sectorial ----
 # Impacts
 # Spatial scale
