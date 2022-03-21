@@ -319,16 +319,15 @@ app_fields = {
     'season': 'Season',
     'sectorId': '',
     'shippingTackled': '',
-    'source': '',
+    'source': 'Sources',
     'spatialScopeId': '',
     'subUnit': '',
     'trafficSeparationScheme': '',
     'useOrActivityId': '',
     'waterBodyCategoryId': '',
 # Sectorial ----
-# Impacts
-# Spatial scale
-# Source(s)
+# Impacts ??
+# Spatial scale ??
 #
 # WFD ----
 # Nature of physical modification
