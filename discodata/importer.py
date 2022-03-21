@@ -273,20 +273,20 @@ app_fields = {
     'waterBodyCategory': 'Water body category',
 
     # Further information
-    'approachingAreas': '',
-    'areasToBeAvoided': '',
-    'authority': '',
-    'categories': '',
+    'approachingAreas': 'Approaching Areas',
+    'areasToBeAvoided': 'Areas to be avoided',
+    'authority': 'Authority',
+    'categories': 'Categories',
     'countryCode': '',
     'descriptorsItLinksTo': '',
     'ecologicalImpact': 'Ecological impacts',
     'existingPoliciesLink': 'Link to existing policies',
     'featureCode': '',
-    'futureExpectations': '',
-    'futureScenarios': '',
-    'generalView': '',
+    'futureExpectations': 'Future Expectations',
+    'futureScenarios': 'Future Scenarios',
+    'generalView': 'General View',
     'hydromorphologyEffect': 'Effect on hydromorphology',
-    'implementationStatus': '',
+    'implementationStatus': 'MSPD implementation status',
     'keywords': '',
     # 'keywords': 'Keywords', ??
     'ktmLinkTo': 'KTMs it links to',
@@ -301,28 +301,28 @@ app_fields = {
     'measurePurpose': 'Measure purpose',
     'measureResponse': 'Measure response',
     'measureStatusId': '',
-    'objective': '',
+    'objective': 'Objective',
     'otherSpatialScope': 'MSFD Spatial scope',
     'physicalModificationNature': 'Nature of physical modification',
-    'ports': '',
-    'precautionaryAreas': '',
+    'ports': 'Ports',
+    'precautionaryAreas': 'Precautionary areas',
     'pressureCode': '',
     'pressureName': 'Pressure name',
     'pressureType': 'Type of pressure',
-    'priority': '',
+    'priority': 'Priority Areas',
     'ranking': 'Ranking',
     'recommendedMeasureTypeE02AndOrE03':
         'Measure type recommended to address E02 and/or E03',
     'relevantFeaturesFromAnnexIII': 'Relevant features from MSFD Annex III',
     'relevantTargets': 'Relevant targets',
-    'safetyManner': '',
+    'safetyManner': 'Safety manner',
     'season': 'Season',
     'sectorId': '',
-    'shippingTackled': '',
-    'source': 'Sources',
+    'shippingTackled': 'Shipping Tackled',
+    'source': 'Source', # ?? Sources
     'spatialScopeId': '',
     'subUnit': '',
-    'trafficSeparationScheme': '',
+    'trafficSeparationScheme': 'Traffic separation scheme',
     'useOrActivityId': '',
     'waterBodyCategoryId': '',
 # Sectorial ----
@@ -330,27 +330,7 @@ app_fields = {
 # Spatial scale ??
 #
 # MSPD ----
-# Nature of physical modification
-# MSPD implementation status
-# Shipping Tackled
-# Traffic separation scheme
-# Priority Areas
-# Approaching Areas
-# Precautionary areas
-# Areas to be avoided
-# Future Scenarios
-# Source
 # Keywords
-# Authority
-# General View
-# Ports
-# Future Expectations
-# Safety manner
-# Objective
-# Categories
-
-
-
 }
 
 def make_mappings(data):
