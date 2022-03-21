@@ -248,19 +248,9 @@ sql_views_more = {
 
 
 app_fields = {
-    'catalogueCode': 'CodeCatalogue',
-    'sector': 'Sector',
-    'useOrActivity': 'Use or activity',
-    'measureName': 'Measure name',
-    'status': 'Status',
-    'measureOrigin': 'Origin of the measure',
-    'measureNature': 'Nature of the measure',
-    'waterBodyCategory': 'Water body category',
-    'spatialScope': 'Spatial scope',
-    'country': 'Country',
-    'measureImpactTo': 'Measure Impacts to',
-    'measureImpactToDetails': 'Measure Impacts to (further details)',
     'D1': 'D1',
+    'D10': 'D10',
+    'D11': 'D11',
     'D2': 'D2',
     'D3': 'D3',
     'D4': 'D4',
@@ -269,8 +259,113 @@ app_fields = {
     'D7': 'D7',
     'D8': 'D8',
     'D9': 'D9',
-    'D10': 'D10',
-    'D11': 'D11',
+    'catalogueCode': 'CodeCatalogue',
+    'country': 'Country',
+    'measureImpactTo': 'Measure Impacts to',
+    'measureImpactToDetails': 'Measure Impacts to (further details)',
+    'measureName': 'Measure name',
+    'measureNature': 'Nature of the measure',
+    'measureOrigin': 'Origin of the measure',
+    'sector': 'Sector',
+    'spatialScope': 'Spatial scope',
+    'status': 'Status',
+    'useOrActivity': 'Use or activity',
+    'waterBodyCategory': 'Water body category',
+
+    # Further information
+    'approachingAreas': '',
+    'areasToBeAvoided': '',
+    'authority': '',
+    'categories': '',
+    'countryCode': '',
+    'descriptorsItLinksTo': '',
+    'ecologicalImpact': '',
+    'existingPoliciesLink': '',
+    'featureCode': '',
+    'futureExpectations': '',
+    'futureScenarios': '',
+    'generalView': '',
+    'hydromorphologyEffect': '',
+    'implementationStatus': '',
+    'keywords': '',
+    'ktmLinkTo': '',
+    'measureAdditionalInfo': 'Measure additional info',
+    'measureCode': '',
+    'measureImpactToId': '',
+    'measureLocation': 'Measure location',
+    'measureMitigationGEP': '',
+    'measureNatureId': '',
+    'measureNumber': '',
+    'measureOriginId': '',
+    'measurePurpose': 'Measure purpose',
+    'measureResponse': 'Measure response',
+    'measureStatusId': '',
+    'objective': '',
+    'otherSpatialScope': '',
+    'physicalModificationNature': '',
+    'ports': '',
+    'precautionaryAreas': '',
+    'pressureCode': '',
+    'pressureName': 'Pressure name',
+    'pressureType': 'Type of pressure',
+    'priority': '',
+    'ranking': 'Ranking',
+    'recommendedMeasureTypeE02AndOrE03':
+        'Measure type recommended to address E02 and/or E03',
+    'relevantFeaturesFromAnnexIII': '',
+    'relevantTargets': '',
+    'safetyManner': '',
+    'season': 'Season',
+    'sectorId': '',
+    'shippingTackled': '',
+    'source': '',
+    'spatialScopeId': '',
+    'subUnit': '',
+    'trafficSeparationScheme': '',
+    'useOrActivityId': '',
+    'waterBodyCategoryId': '',
+
+
+# MSFD ----
+# Link to existing policies
+# KTMs it links to
+# Relevant targets
+# Relevant features from MSFD Annex III
+# MSFD Spatial scope
+# Keywords
+#
+# Sectorial ----
+# Impacts
+# Spatial scale
+# Source(s)
+#
+# WFD ----
+# Nature of physical modification
+# Effect on hydromorphology
+# Ecological impacts
+#
+# MSPD ----
+# Nature of physical modification
+# MSPD implementation status
+# Shipping Tackled
+# Traffic separation scheme
+# Priority Areas
+# Approaching Areas
+# Precautionary areas
+# Areas to be avoided
+# Future Scenarios
+# Source
+# Keywords
+# Authority
+# General View
+# Ports
+# Future Expectations
+# Safety manner
+# Objective
+# Categories
+
+
+
 }
 
 def make_mappings(data):
@@ -481,6 +576,10 @@ def import_from_discodata():
         measure_name = main[OM]
         rec = data[measure_name][main['_id']]
         rec_further = further_information_data[measure_name][main['_id']]
+
+        for field in rec_further.keys() - rec.keys():
+            if field != '':
+                rec[field] = rec_further[field]
 
         keys = main.keys()
         for key, value in rec.items():
