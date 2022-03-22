@@ -488,7 +488,9 @@ def adapt_field(field):
     """ Convert sql field name to application field
     """
     if field in app_fields:
-        return app_fields[field]
+        adapted_field = app_fields[field]
+        if adapted_field != '':
+            return adapted_field
     return field
 
 def adapt_value(value):
