@@ -308,7 +308,7 @@ app_fields = {
     'precautionaryAreas': 'Precautionary areas',
     'pressureCode': '',
     'pressureName': 'Pressure name',
-    'pressureType': 'Type of pressure',
+    'pressureType': 'Pressure type',  # 'Type of pressure',
     'priority': 'Priority Areas',
     'ranking': 'Ranking',
     'recommendedMeasureTypeE02AndOrE03':
@@ -480,6 +480,10 @@ def adapt_value(value):
     """
     if isinstance(value, int):
         return str(value)
+    if value == "null":
+        value = ""
+    if value is None:
+        value = ""
     return value
 
 def adapt_fields_and_values(data):
