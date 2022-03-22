@@ -325,9 +325,6 @@ app_fields = {
     'trafficSeparationScheme': 'Traffic separation scheme',
     'useOrActivityId': '',
     'waterBodyCategoryId': '',
-# Sectorial ----
-# Impacts ??
-# Spatial scale ??
 }
 
 def make_mappings(data):
@@ -385,23 +382,6 @@ def fix_descriptor(rec):
             value.append(descriptor)
         del rec[descriptor]
     rec['Descriptors'] = value
-
-
-def fix_impacts(rec):
-    """ Fix Impacts field
-    """
-    value = []
-    fields = [
-        'IMPACTS Waste management', 'IMPACTS Air pollution',
-        'IMPACTS Marine litter', 'IMPACTS NIS', 'IMPACTS Noise',
-        'IMPACTS Pollution', 'IMPACTS Water pollution', 'IMPACTS Other'
-    ]
-    for field in fields:
-        if field in rec:
-            if rec[field] == '1':
-                value.append(field.replace('IMPACTS ', ''))
-            del rec[field]
-    rec['Impacts'] = value
 
 
 def fix_region(rec):
@@ -565,7 +545,6 @@ def import_from_discodata():
                 main[key] = value
 
         fix_descriptor(main)
-        fix_impacts(main)
         fix_region(main)
         fix_spatial_scope(main, spatial_scopes)
         # fix_fieldnames(main)
