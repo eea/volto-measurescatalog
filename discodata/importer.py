@@ -287,8 +287,7 @@ app_fields = {
     'generalView': 'General View',
     'hydromorphologyEffect': 'Effect on hydromorphology',
     'implementationStatus': 'MSPD implementation status',
-    'keywords': '',
-    # 'keywords': 'Keywords', ??
+    'keywords': 'Keywords',
     'ktmLinkTo': 'KTMs it links to',
     'measureAdditionalInfo': 'Measure additional info',
     'measureCode': '',
@@ -420,32 +419,6 @@ def fix_region(rec):
     if 'Region' in rec and rec['Region']:
         rec['Region'] = regions[rec['Region']]
 
-
-def fix_keywords(rec):
-    """ Fix Keywords field
-    """
-    value = []
-
-    if 'Keywords' in rec:
-        rec['Keywords'] = list(
-            filter(None, [k.strip() for k in rec['Keywords'].split(',')]))
-        return
-
-    fields = [
-        'accident management', 'administrative', 'air pollution',
-        'anchoring/mooring', 'awareness raising', 'ballast waters',
-        'construction', 'dredging', 'EU policies', 'hull fouling',
-        'international agreements', 'legislation/regulation', 'maintenence',
-        'marine litter', 'navigation', 'NIS', 'noise', 'pollution',
-        'regional sea convention', 'PSSA/ZMES', 'technical measures',
-        'waste management', 'water pollution'
-    ]
-    for field in fields:
-        if field in rec:
-            if rec[field] == '1':
-                value.append(field)
-            del rec[field]
-    rec['Keywords'] = value
 
 def remap(k):
     """ Remap
@@ -588,7 +561,6 @@ def import_from_discodata():
 
         fix_descriptor(main)
         fix_impacts(main)
-        fix_keywords(main)
         fix_region(main)
         # fix_fieldnames(main)
 
