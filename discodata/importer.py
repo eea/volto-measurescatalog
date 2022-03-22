@@ -345,8 +345,24 @@ def make_mappings(data):
     mapping = {}
     for field in fields:
         if field not in blacklist:
-            mapping[field] = {"type": "keyword",
-                          "copy_to": ['all_fields_for_freetext']}
+            mapping[field] = {
+                "type": "keyword",
+                "copy_to": ['all_fields_for_freetext', 'autocomplete', 'did_you_mean'],
+            }
+
+    mapping["autocomplete"] = {
+        "analyzer": "autocomplete",
+        "copy_to": ["all_fields_for_freetext"],
+        "fielddata": True,
+        "type": "text"
+    }
+
+    mapping["did_you_mean"] = {
+        "analyzer": "didYouMean",
+        "copy_to": ["all_fields_for_freetext"],
+        "fielddata": True,
+        "type": "text"
+    }
 
     mapping['all_fields_for_freetext'] = {
         "type": "text", "analyzer": "standard"      # analyzer:freetext
@@ -584,9 +600,160 @@ def import_from_discodata():
     resp = conn.indices.create(
         index,
         body={
+            "settings": {
+                "max_shingle_diff": "12",
+                "analysis": {
+                    "analyzer": {
+                        "autocomplete": {
+                            "char_filter": [
+                                "html_strip"
+                            ],
+                            "filter": [
+                                "lowercase",
+                                "stop",
+                                "autocompleteFilter",
+                                "trim"
+                            ],
+                            "tokenizer": "standard",
+                            "type": "custom"
+                        },
+                        "comma": {
+                            "lowercase": "false",
+                            "pattern": ", ",
+                            "type": "pattern"
+                        },
+                        "date2year": {
+                            "pattern": "[-](.*)",
+                            "type": "pattern"
+                        },
+                        "default": {
+                            "filter": [
+                                "lowercase",
+                                "stop",
+                                "asciifolding",
+                                "english_stemmer"
+                            ],
+                            "tokenizer": "standard",
+                            "type": "custom"
+                        },
+                        "didYouMean": {
+                            "char_filter": [
+                                "html_strip"
+                            ],
+                            "filter": [
+                                "lowercase"
+                            ],
+                            "tokenizer": "standard",
+                            "type": "custom"
+                        },
+                        "english_stop_analyzer": {
+                            "filter": [
+                                "english_stop"
+                            ],
+                            "tokenizer": "lowercase"
+                        },
+                        "freetext": {
+                            "char_filter": [
+                                "html_strip"
+                            ],
+                            "filter": [
+                                "lowercase",
+                                "english_stop"
+                            ],
+                            "tokenizer": "standard",
+                            "type": "custom"
+                        },
+                        "highlight": {
+                            "filter": [
+                                "lowercase",
+                                "asciifolding"
+                            ],
+                            "tokenizer": "standard",
+                            "type": "custom"
+                        },
+                        "none": {
+                            "filter": [
+                                "lowercase"
+                            ],
+                            "type": "keyword"
+                        },
+                        "semicolon": {
+                            "lowercase": "false",
+                            "pattern": "; ",
+                            "type": "pattern"
+                        }
+                    },
+                    "char_filter": {
+                        "url_filter": {
+                            "mappings": [
+                                "/ =>  ",
+                                ". =>  "
+                            ],
+                            "type": "mapping"
+                        }
+                    },
+                    "filter": {
+                        "autocompleteFilter": {
+                            "filler_token": "",
+                            "max_shingle_size": "12",
+                            "min_shingle_size": "2",
+                            "type": "shingle"
+                        },
+                        "english_stemmer": {
+                            "language": "english",
+                            "type": "stemmer"
+                        },
+                        "english_stop": {
+                            "stopwords": [
+                                "a",
+                                "an",
+                                "and",
+                                "are",
+                                "as",
+                                "at",
+                                "be",
+                                "but",
+                                "by",
+                                "for",
+                                "if",
+                                "in",
+                                "into",
+                                "is",
+                                "it",
+                                "no",
+                                "not",
+                                "of",
+                                "on",
+                                "or",
+                                "such",
+                                "that",
+                                "the",
+                                "their",
+                                "then",
+                                "there",
+                                "these",
+                                "they",
+                                "this",
+                                "to",
+                                "was",
+                                "will",
+                                "what",
+                                "when",
+                                "where",
+                                "which",
+                                "who",
+                                "how",
+                                "why",
+                                "does"
+                            ],
+                            "type": "stop"
+                        }
+                    },
+                },
+            },
             "mappings": {
                 "properties": make_mappings(master_data)
-            }
+            },
 
         })
     assert resp.get('acknowledged') is True
