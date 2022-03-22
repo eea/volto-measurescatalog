@@ -246,6 +246,7 @@ sql_views_more = {
     }
 }
 
+spatial_scopes_view = "https://discodata.eea.europa.eu/sql?query=SELECT%20TOP%20100%20*%20FROM%20%5BWISE_ShippingsPorts_Measures%5D.%5Blatest%5D.%5BSpatial_scopes%5D&p=1&nrOfHits=100&mail=null&schema=null"
 
 app_fields = {
     'D1': 'D1',
@@ -318,8 +319,8 @@ app_fields = {
     'season': 'Season',
     'sectorId': '',
     'shippingTackled': 'Shipping Tackled',
-    'source': 'Source', # ?? Sources
-    'spatialScopeId': '',
+    'source': 'Source',
+    'spatialScopeId': 'Spatial scale',
     'subUnit': '',
     'trafficSeparationScheme': 'Traffic separation scheme',
     'useOrActivityId': '',
@@ -327,9 +328,6 @@ app_fields = {
 # Sectorial ----
 # Impacts ??
 # Spatial scale ??
-#
-# MSPD ----
-# Keywords
 }
 
 def make_mappings(data):
@@ -419,6 +417,12 @@ def fix_region(rec):
     if 'Region' in rec and rec['Region']:
         rec['Region'] = regions[rec['Region']]
 
+def fix_spatial_scope(rec, spatial_scopes):
+    """ Fix spatial scale
+    """
+    new = [x['name'] for x in spatial_scopes if x['Id'] == rec.get("Spatial scale")]
+    if new is not None:
+        rec["Spatial scale"] = new
 
 def remap(k):
     """ Remap
@@ -531,6 +535,7 @@ def import_from_discodata():
 
     data = get_details_data()
     further_information_data = get_further_information_data()
+    spatial_scopes = adapt_fields_and_values(get_data(spatial_scopes_view))
 
     for (i, main) in enumerate(master_data):
         measure_name = main[OM]
@@ -562,6 +567,7 @@ def import_from_discodata():
         fix_descriptor(main)
         fix_impacts(main)
         fix_region(main)
+        fix_spatial_scope(main, spatial_scopes)
         # fix_fieldnames(main)
 
         _id = get_id(main)
