@@ -251,6 +251,7 @@ export const wise_config = {
     }),
     suiFacet({
       field: 'Descriptors',
+      label: 'MSFD Descriptors',
       isMulti: true,
       isFilterable: false,
       show: 100,
