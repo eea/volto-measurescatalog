@@ -326,6 +326,14 @@ export const wise_config = {
         },
       ],
     }),
+    suiFacet({
+      field: 'Country',
+      isMulti: true,
+      isFilterable: false,
+      show: 100,
+      factory: 'MultiTermFacet',
+      wrapper: 'AccordionFacetWrapper',
+    }),
   ],
   highlight: {
     queryParams: {
