@@ -1,4 +1,6 @@
-  Execute shell in wise-test-marine-frontend-1:
+Execute shell in wise-test-marine-frontend-1:
+
+```console
   $ cd /opt/frontend/src/addons/volto-measurescatalog/discodata
   $ apt-get update || : && apt-get install python -y
   $ apt-get install -y virtualenv
@@ -10,3 +12,4 @@
   $ apt install vim
   $ vim importer.py - set host = '10.50.4.135'
   $ .venv/bin/python3 importer.py
+```
