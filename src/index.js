@@ -1,4 +1,3 @@
-import React from 'react';
 import { mergeConfig } from '@eeacms/search';
 import { wise_config, wise_minimal_config, wise_resolve } from './config';
 

@@ -1,4 +1,4 @@
-import { ResultModel } from '@eeacms/search/lib/models';
+import { ResultModel } from '@eeacms/search';
 
 export class ResultModelExtended extends ResultModel {
   get originOfMeasure() {
