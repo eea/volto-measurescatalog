@@ -17,11 +17,12 @@
     "url": "git@github.com:eea/volto-measurescatalog.git"
   },
   "dependencies": {
+    "@eeacms/search": "*",
+    "@eeacms/volto-searchlib": "0.3.14",
     "@nivo/bar": "^0.79.1",
     "@nivo/core": "^0.79.0",
     "@nivo/pie": "^0.79.1",
     "@nivo/tooltip": "^0.79.0",
-    "@eeacms/search": "*",
     "@plone/scripts": "*"
   },
   "devDependencies": {
