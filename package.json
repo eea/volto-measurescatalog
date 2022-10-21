@@ -16,6 +16,9 @@
     "type": "git",
     "url": "git@github.com:eea/volto-measurescatalog.git"
   },
+  "addons": [
+    "@eeacms/volto-searchlib"
+  ],
   "dependencies": {
     "@eeacms/search": "*",
     "@eeacms/volto-searchlib": "*",
