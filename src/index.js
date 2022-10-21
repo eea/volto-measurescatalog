@@ -53,7 +53,7 @@ export function installMeasuresCatalogue(config) {
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
 
-  console.log('config', config.settings.searchlib);
+  // console.log('config', config.settings.searchlib);
 
   return config;
 }
