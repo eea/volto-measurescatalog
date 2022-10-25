@@ -1,8 +1,6 @@
 import React from 'react';
 import { Item } from 'semantic-ui-react';
-import { useAppConfig } from '@eeacms/search';
-import { String } from '@eeacms/search';
-import { ResultHeader } from '@eeacms/search';
+import { useAppConfig, String, ResultHeader } from '@eeacms/search';
 
 const DescriptorItem = (props) => {
   const { descriptor, facets } = props;

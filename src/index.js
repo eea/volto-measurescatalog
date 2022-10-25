@@ -1,4 +1,3 @@
-import React from 'react';
 import { mergeConfig } from '@eeacms/search';
 import { wise_config, wise_minimal_config, wise_resolve } from './config';
 
@@ -54,7 +53,7 @@ export function installMeasuresCatalogue(config) {
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
 
-  console.log('config', config.settings.searchlib);
+  // console.log('config', config.settings.searchlib);
 
   return config;
 }

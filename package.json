@@ -16,7 +16,12 @@
     "type": "git",
     "url": "git@github.com:eea/volto-measurescatalog.git"
   },
+  "addons": [
+    "@eeacms/volto-searchlib"
+  ],
   "dependencies": {
+    "@eeacms/search": "*",
+    "@eeacms/volto-searchlib": "*",
     "@nivo/bar": "^0.79.1",
     "@nivo/core": "^0.79.0",
     "@nivo/pie": "^0.79.1",
@@ -25,7 +30,8 @@
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
-    "babel-plugin-transform-class-properties": "^6.24.1"
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "md5": "^2.3.0"
   },
   "scripts": {
     "release": "release-it",
