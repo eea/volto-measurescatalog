@@ -12,6 +12,7 @@ yarn.lock
 package-lock.json
 
 node_modules
+cache/
 build
 dist
 cypress/videos
