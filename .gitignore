@@ -3,6 +3,7 @@
 .eslintrc.js
 project
 logs
+.nyc_output
 *.log
 npm-debug.log*
 .DS_Store
@@ -13,6 +14,7 @@ package-lock.json
 
 node_modules
 cache/
+coverage
 build
 dist
 cypress/videos
