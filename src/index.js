@@ -63,7 +63,7 @@ const applyConfig = (config) => {
     id: 'wmcharts',
     title: 'WISE Marine Charts',
     icon: codeSVG,
-    group: 'common',
+    group: 'marine_addons',
     view: ChartsBlockView,
     edit: ChartsBlockEdit,
     restricted: false,
