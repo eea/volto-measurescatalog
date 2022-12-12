@@ -7,7 +7,7 @@ import '../less/base.less';
 import '../less/wise.less';
 
 const RightColumnLayout = (props) => {
-  const { bodyContent, bodyFooter, bodyHeader, header, sideContent } = props;
+  const { bodyContent, bodyFooter, bodyHeader, header } = props; //sideContent
   const { appConfig } = useAppConfig();
   const FacetsListComponent = appConfig.facetsListComponent
     ? registry.resolve[appConfig.facetsListComponent].component
