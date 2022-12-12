@@ -24,7 +24,6 @@ export const BarChart = ({
   if (fieldX !== undefined && fieldY !== undefined) {
     searchOnClick = true;
   }
-
   const { appConfig } = useAppConfig();
 
   return (
@@ -41,7 +40,8 @@ export const BarChart = ({
       onClick={(node, event) => {
         if (searchOnClick) {
           const getUrl = window.location;
-          const baseUrl = getUrl.protocol + '//' + getUrl.host;
+          // const baseUrl = getUrl.protocol + '//' + getUrl.host;
+          const baseUrl = getUrl.href.split('/').slice(0,-1).join('/')
           const newUrl =
             baseUrl +
             appConfig.wiseSearchPath +
