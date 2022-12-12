@@ -33,7 +33,8 @@ export const PieChart = ({ data, field, ...rest }) => {
       onClick={(node, event) => {
         if (searchOnClick) {
           const getUrl = window.location;
-          const baseUrl = getUrl.protocol + '//' + getUrl.host;
+          // const baseUrl = getUrl.protocol + '//' + getUrl.host;
+          const baseUrl = getUrl.href.split('/').slice(0, -1).join('/');
           const newUrl =
             baseUrl +
             appConfig.wiseSearchPath +

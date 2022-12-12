@@ -1,11 +1,18 @@
 import React from 'react';
+import { useAppConfig, FacetsList } from '@eeacms/search';
+import { registry } from '@eeacms/search';
 import { Grid } from 'semantic-ui-react';
 // import '../less/custom.less';
 import '../less/base.less';
 import '../less/wise.less';
 
 const RightColumnLayout = (props) => {
-  const { bodyContent, bodyFooter, bodyHeader, header, sideContent } = props;
+  const { bodyContent, bodyFooter, bodyHeader, header } = props; //sideContent
+  const { appConfig } = useAppConfig();
+  const FacetsListComponent = appConfig.facetsListComponent
+    ? registry.resolve[appConfig.facetsListComponent].component
+    : FacetsList;
+
   return (
     <div id="search-app">
       <Grid className="body-header">
@@ -33,7 +40,7 @@ const RightColumnLayout = (props) => {
             className="col-right"
           >
             <h3>Filter by</h3>
-            <div>{sideContent}</div>
+            <div>{<FacetsListComponent />}</div>
           </Grid.Column>
         </Grid.Row>
       </Grid>

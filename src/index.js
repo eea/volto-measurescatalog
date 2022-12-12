@@ -1,7 +1,7 @@
 import { mergeConfig } from '@eeacms/search';
 import { wise_config, wise_minimal_config, wise_resolve } from './config';
 
-import 'regenerator-runtime/runtime'; // compatibility with react-speech-recognition
+// import 'regenerator-runtime/runtime'; // compatibility with react-speech-recognition
 
 import { registry } from '@eeacms/search';
 import codeSVG from '@plone/volto/icons/code.svg';
