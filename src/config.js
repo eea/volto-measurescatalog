@@ -219,6 +219,7 @@ export const wise_config = {
   useSearchPhrases: false,
   searchAsYouType: false,
   searchInputPlaceholder: 'What are you looking for?',
+  landingPageURL: 'charts',
 
   permanentFilters: [],
 
