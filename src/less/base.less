@@ -83,49 +83,28 @@ body.searchlib-page {
       }
 
       div.header-content {
-        div.container.header-columns {
-          width: 100% !important;
+        div.sui-search-box {
+          display: flex;
+          max-width: 630px;
 
-          div.col-left {
-            display: none;
-
-            div.search-logo {
-              text-align: right;
-
-              img {
-                width: 100px !important;
-                height: auto;
-              }
-            }
+          .sui-search-box__text-input {
+            padding: 10px;
+            border-radius: 0px;
           }
 
-          div.col-mid {
-            padding-left: 1.5em;
+          .sui-search-box__submit {
+            padding: 10px;
+            border: none;
+            margin-left: 5px;
+            background: @wm-light-gray3;
+            border-radius: 0px;
+            box-shadow: none;
+            color: @wm-dark-gray;
 
-            div.sui-search-box {
-              display: flex;
-              max-width: 630px;
-
-              .sui-search-box__text-input {
-                padding: 10px;
-                border-radius: 0px;
-              }
-
-              .sui-search-box__submit {
-                padding: 10px;
-                border: none;
-                margin-left: 5px;
-                background: @wm-light-gray3;
-                border-radius: 0px;
-                box-shadow: none;
-                color: @wm-dark-gray;
-
-                &:hover {
-                  background: none;
-                  background-color: @wm-dark-blue !important;
-                  color: #fff;
-                }
-              }
+            &:hover {
+              background: none;
+              background-color: @wm-dark-blue !important;
+              color: #fff;
             }
           }
         }
@@ -133,7 +112,7 @@ body.searchlib-page {
 
       div.body-content {
         div.col-left {
-          padding: 0px 1.5em 0px 1.5em;
+          // padding: 0px 1.5em 0px 1.5em;
           margin-top: 0px;
 
           .filter-list-header {
@@ -225,6 +204,7 @@ body.searchlib-page {
             }
 
             span.sui-multi-checkbox-facet__option-count {
+              display: flex !important;
               margin-left: 0px !important;
             }
           }
