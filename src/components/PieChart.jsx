@@ -33,7 +33,6 @@ export const PieChart = ({ data, field, ...rest }) => {
       onClick={(node, event) => {
         if (searchOnClick) {
           const getUrl = window.location;
-          // const baseUrl = getUrl.protocol + '//' + getUrl.host;
           const baseUrl = getUrl.href.split('/').slice(0, -1).join('/');
           const newUrl =
             baseUrl +
@@ -41,7 +40,6 @@ export const PieChart = ({ data, field, ...rest }) => {
             encodeFilters([[field, node.id, 'any']]);
           window.location.replace(newUrl);
         } else {
-          // console.log('Unknown field.');
         }
       }}
       legends={[

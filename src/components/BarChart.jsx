@@ -10,9 +10,6 @@ import { encodeFilters } from './utils';
 // website examples showcase many properties,
 // you'll often use just a few of them.
 
-// const fill = [ { match: { id: 'fries' }, id: 'dots' }, { match: { id: 'sandwich' }, id: 'lines' }];
-//[ 'hot dog', 'burger', 'sandwich', 'kebab', 'fries', 'donut' ]
-
 export const BarChart = ({
   data /* see data tab */,
   keys,
@@ -40,7 +37,6 @@ export const BarChart = ({
       onClick={(node, event) => {
         if (searchOnClick) {
           const getUrl = window.location;
-          // const baseUrl = getUrl.protocol + '//' + getUrl.host;
           const baseUrl = getUrl.href.split('/').slice(0, -1).join('/');
           const newUrl =
             baseUrl +
@@ -51,7 +47,6 @@ export const BarChart = ({
             ]);
           window.location.replace(newUrl);
         } else {
-          // console.log("Not set.");
         }
       }}
       defs={[

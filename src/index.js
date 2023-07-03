@@ -1,9 +1,5 @@
-import { mergeConfig } from '@eeacms/search';
+import { mergeConfig, registry } from '@eeacms/search';
 import { wise_config, wise_minimal_config, wise_resolve } from './config';
-
-// import 'regenerator-runtime/runtime'; // compatibility with react-speech-recognition
-
-import { registry } from '@eeacms/search';
 import codeSVG from '@plone/volto/icons/code.svg';
 import ChartsBlockView from './ChartsBlock/ChartsBlockView';
 import ChartsBlockEdit from './ChartsBlock/ChartsBlockEdit';
@@ -52,8 +48,6 @@ export function installMeasuresCatalogue(config) {
     registry.searchui.wisemin.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
-
-  // console.log('config', config.settings.searchlib);
 
   return config;
 }

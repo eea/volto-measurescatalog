@@ -4,10 +4,6 @@ import { PieChart } from './PieChart';
 import { BarChart } from './BarChart';
 import { Grid, Table } from 'semantic-ui-react'; // , Segment
 
-// const getPercentage = (value, total) => {
-//   return (value * 100) / total;
-// };
-
 const REQUEST = {
   size: 0,
   aggs: {
@@ -72,7 +68,6 @@ const getSectors = (data) => {
     label: key,
     value: doc_count,
   }));
-  // console.log('sector data', { rawData, data });
   const total = rawData.reduce((acc, n) => acc + n.value, 0);
   return rawData.map((v) => ({ ...v, value: v.value / total }));
 };
@@ -188,17 +183,10 @@ const ChartsIntro = (props) => {
     }
   }, []);
 
-  // const allOrigins = chartData
-  //   ? chartData.Origin.buckets.map(({ key }) => key)
-  //   : [];
-
   const barData = (chartData ? getBarChartData(chartData) : []).sort((a, b) =>
     parseInt(a.Descriptor.slice(1)) > parseInt(b.Descriptor.slice(1)) ? 1 : -1,
   );
   const measureData = chartData ? getMeasureImpacts(chartData) : [];
-  // console.log('measureData', measureData, chartData);
-  // console.log('all', chartData);
-  // console.log('barData', barData);
 
   return (
     <div className="charts-intro-page">
