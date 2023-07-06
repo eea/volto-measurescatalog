@@ -53,24 +53,24 @@ export function installMeasuresCatalogue(config) {
 }
 
 const applyConfig = (config) => {
-  config.blocks.blocksConfig.wmcharts = {
-    id: 'wmcharts',
-    title: 'WISE Marine Charts',
-    icon: codeSVG,
-    group: 'common',
-    view: ChartsBlockView,
-    edit: ChartsBlockEdit,
-    restricted: false,
-    mostUsed: false,
-    blockHasOwnFocusManagement: false,
-    sidebarTab: 1,
-    security: {
-      addPermission: [],
-      view: [],
-    },
-  };
+  // config.blocks.blocksConfig.wmcharts = {
+  //   id: 'wmcharts',
+  //   title: 'WISE Marine Charts',
+  //   icon: codeSVG,
+  //   group: 'common',
+  //   view: ChartsBlockView,
+  //   edit: ChartsBlockEdit,
+  //   restricted: false,
+  //   mostUsed: false,
+  //   blockHasOwnFocusManagement: false,
+  //   sidebarTab: 1,
+  //   security: {
+  //     addPermission: [],
+  //     view: [],
+  //   },
+  // };
 
-  config.settings.wmcharts = registry;
+  // config.settings.wmcharts = registry;
   return config;
 };
 
