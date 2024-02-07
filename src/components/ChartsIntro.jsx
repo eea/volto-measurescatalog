@@ -242,7 +242,7 @@ const ChartsIntro = (props) => {
                     data={barData}
                     keys={Object.keys(barData[1] || {}) // [0] doesn't have all keys
                       .filter((k) => k !== 'Descriptor')
-                      .sort()}
+                      .sort((a, b) => a.localeCompare(b))}
                     indexBy="Descriptor"
                   />
                 </div>
@@ -256,7 +256,7 @@ const ChartsIntro = (props) => {
                   columns={barData.map(({ Descriptor }) => Descriptor)}
                   rows={Object.keys(barData[1] || {})
                     .filter((k) => k !== 'Descriptor')
-                    .sort()}
+                    .sort((a, b) => a.localeCompare(b))}
                 />
               </Grid.Column>
             </Grid.Row>
