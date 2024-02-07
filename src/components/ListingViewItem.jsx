@@ -15,7 +15,7 @@ const DescriptorItem = (props) => {
             href={d.url}
             className="simple-item-link"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener"
           >
             {d.name}
           </a>
