@@ -14,11 +14,13 @@
 [![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog-develop)
 [![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog-develop)
 
-Catalogue of Measures search [Volto](https://github.com/plone/volto) add-on for WISE Marine
+Catalogue of Measures search [Volto](https://github.com/plone/volto) add-on for [WISE Marine](https://water.europa.eu/marine/state-of-europe-seas/marine-sectors-catalogue-of-measures/charts)
 
 ## Features
 
-Demo GIF
+![measurescatalog
+](https://github.com/eea/volto-measurescatalog/assets/20109479/11343590-bc0f-4b82-9020-0a356495c2a5)
+
 
 ## Getting started
 
