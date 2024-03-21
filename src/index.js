@@ -1,13 +1,6 @@
 import { mergeConfig } from '@eeacms/search';
 import { wise_config, wise_minimal_config, wise_resolve } from './config';
 
-// import 'regenerator-runtime/runtime'; // compatibility with react-speech-recognition
-
-import { registry } from '@eeacms/search';
-import codeSVG from '@plone/volto/icons/code.svg';
-import ChartsBlockView from './ChartsBlock/ChartsBlockView';
-import ChartsBlockEdit from './ChartsBlock/ChartsBlockEdit';
-
 const getClientProxyAddress = () => {
   const url = new URL(window.location);
   url.pathname = '';
@@ -53,30 +46,28 @@ export function installMeasuresCatalogue(config) {
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
 
-  // console.log('config', config.settings.searchlib);
-
   return config;
 }
 
 const applyConfig = (config) => {
-  config.blocks.blocksConfig.wmcharts = {
-    id: 'wmcharts',
-    title: 'WISE Marine Charts',
-    icon: codeSVG,
-    group: 'common',
-    view: ChartsBlockView,
-    edit: ChartsBlockEdit,
-    restricted: false,
-    mostUsed: false,
-    blockHasOwnFocusManagement: false,
-    sidebarTab: 1,
-    security: {
-      addPermission: [],
-      view: [],
-    },
-  };
+  // config.blocks.blocksConfig.wmcharts = {
+  //   id: 'wmcharts',
+  //   title: 'WISE Marine Charts',
+  //   icon: codeSVG,
+  //   group: 'common',
+  //   view: ChartsBlockView,
+  //   edit: ChartsBlockEdit,
+  //   restricted: false,
+  //   mostUsed: false,
+  //   blockHasOwnFocusManagement: false,
+  //   sidebarTab: 1,
+  //   security: {
+  //     addPermission: [],
+  //     view: [],
+  //   },
+  // };
 
-  config.settings.wmcharts = registry;
+  // config.settings.wmcharts = registry;
   return config;
 };
 

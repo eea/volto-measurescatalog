@@ -1,8 +1,6 @@
 import React from 'react';
-import { useAppConfig, FacetsList } from '@eeacms/search';
-import { registry } from '@eeacms/search';
+import { useAppConfig, FacetsList, registry } from '@eeacms/search';
 import { Grid } from 'semantic-ui-react';
-// import '../less/custom.less';
 import '../less/base.less';
 import '../less/wise.less';
 
