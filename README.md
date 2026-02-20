@@ -3,16 +3,16 @@
 [![Releases](https://img.shields.io/github/v/release/eea/volto-measurescatalog)](https://github.com/eea/volto-measurescatalog/releases)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-measurescatalog%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-measurescatalog/job/master/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog-master&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog-master)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog-master&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog-master)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog-master&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog-master)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog-master&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog-master)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-measurescatalog%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-measurescatalog/job/develop/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog-develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog-develop)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog-develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog-develop)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog-develop)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog-develop)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog&branch=develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog&branch=develop)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog&branch=develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog&branch=develop)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog&branch=develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog&branch=develop)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-measurescatalog&branch=develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-measurescatalog&branch=develop)
 
 Catalogue of Measures search [Volto](https://github.com/plone/volto) add-on for [WISE Marine](https://water.europa.eu/marine/state-of-europe-seas/marine-sectors-catalogue-of-measures/charts)
 
